@@ -13,9 +13,12 @@
     "deploy": "gh-pages -d dist --repo https://github.com/hasindu-k/sinhala-learn-website.git"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.12",
+    "daisyui": "^5.0.50",
     "gh-pages": "^6.3.0",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "tailwindcss": "^4.1.12"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
