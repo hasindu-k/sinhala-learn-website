@@ -1,7 +1,42 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { milestones } from "../../data/index";
 import "./Hero.css";
 
 const Hero: React.FC = () => {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    // Simulate progress calculation with a slight delay for animation
+    const calculateProgress = () => {
+      const totalWeight = milestones.reduce((sum, m) => sum + m.weight, 0);
+      const completedWeight = milestones
+        .filter((m) => m.status === "completed")
+        .reduce((sum, m) => sum + m.weight, 0);
+
+      const inProgressWeight = milestones
+        .filter((m) => m.status === "in-progress")
+        .reduce((sum, m) => sum + m.weight * 0.5, 0);
+
+      return Math.round(
+        ((completedWeight + inProgressWeight) / totalWeight) * 100
+      );
+    };
+
+    // Animate progress bar
+    const targetProgress = calculateProgress();
+    const interval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= targetProgress) {
+          clearInterval(interval);
+          return targetProgress;
+        }
+        return prev + 1;
+      });
+    }, 30);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-sky-50 to-transparent"></div>
@@ -93,7 +128,7 @@ const Hero: React.FC = () => {
                   ></div>
                 </div>
                 <p className="mt-2 text-xs text-slate-500">
-                  Estimated overall progress: ~28%
+                  Estimated overall progress: ~{progress}%
                 </p>
               </div>
             </div>

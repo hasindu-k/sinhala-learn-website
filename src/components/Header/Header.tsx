@@ -30,7 +30,7 @@ const Header: React.FC = () => {
             </a>
           </nav>
           <a href="#documents" className="btn btn-primary text-sm">
-            View TAF
+            View Documents
           </a>
         </div>
       </div>
