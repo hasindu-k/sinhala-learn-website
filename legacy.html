@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SinhalaLearn | AI‑Powered Educational Assistant for Sinhala Resources</title>
+  <meta name="description"
+    content="Public progress site for the SinhalaLearn research project (IT4010 Research Project – SLIIT 2025).">
+    
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --grad: linear-gradient(135deg, #0ea5e9 0%, #6366f1 50%, #a855f7 100%);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, .08);
+      backdrop-filter: blur(12px);
+    }
+
+    .chip {
+      @apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium;
+    }
+
+    .shadow-soft {
+      box-shadow: 0 10px 30px rgba(2, 6, 23, .12);
+    }
+
+    .ring-soft {
+      box-shadow: 0 0 0 1px rgba(148, 163, 184, .25) inset;
+    }
+
+    .btn {
+      @apply inline-flex items-center justify-center px-4 py-2 rounded-xl font-semibold transition;
+    }
+
+    .btn-primary {
+      background-image: var(--grad);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.06);
+    }
+
+    .btn-ghost {
+      @apply border border-slate-300/40 hover:border-slate-300 text-slate-700 dark:text-slate-100;
+    }
+
+    .tag {
+      @apply px-2.5 py-1 rounded-full text-[11px] font-semibold bg-slate-100 text-slate-700;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+  <!-- Nav -->
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="h-16 flex items-center justify-between">
+        <a href="#" class="flex items-center gap-3">
+          <span
+            class="inline-flex h-9 w-9 rounded-xl bg-gradient-to-br from-sky-500 via-indigo-500 to-fuchsia-500 shadow-soft"></span>
+          <span class="text-lg font-extrabold tracking-tight">SinhalaLearn</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#about" class="hover:text-sky-600">About</a>
+          <a href="#components" class="hover:text-sky-600">Components</a>
+          <a href="#timeline" class="hover:text-sky-600">Timeline</a>
+          <a href="#documents" class="hover:text-sky-600">Documents</a>
+          <a href="#team" class="hover:text-sky-600">Team</a>
+        </nav>
+        <a href="#documents" class="btn btn-primary text-sm">View TAF</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-sky-50 to-transparent"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <span class="tag">IT4010 Research Project – SLIIT 2025</span>
+          <h1 class="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight">
+            AI‑Powered Educational Assistant for <span class="bg-clip-text text-transparent"
+              style="background-image:var(--grad);">Sinhala Resources</span>
+          </h1>
+          <p class="mt-5 text-slate-600 leading-relaxed">
+            Building <strong>offline‑capable</strong>, <strong>source‑grounded</strong> Sinhala Q&A, document
+            processing, and <strong>semantic</strong> answer evaluation - tailored for Sri Lankan classrooms.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <span class="chip bg-slate-900 text-white">RAG</span>
+            <span class="chip bg-sky-100 text-sky-700">Sinhala OCR</span>
+            <span class="chip bg-indigo-100 text-indigo-700">Embeddings</span>
+            <span class="chip bg-fuchsia-100 text-fuchsia-700">Offline‑first</span>
+          </div>
+          <div class="mt-8 flex items-center gap-3">
+            <a href="#timeline" class="btn btn-primary">Project Timeline</a>
+            <a href="#components" class="btn btn-outline btn-ghost">View Components</a>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="rounded-2xl border border-slate-200/60 bg-white shadow-soft p-6">
+            <div class="grid grid-cols-3 gap-4 text-center">
+              <div class="rounded-xl p-5 bg-sky-50">
+                <div class="text-3xl font-extrabold text-sky-600">01</div>
+                <div class="text-xs uppercase tracking-wide mt-1 text-slate-600">TAF</div>
+                <div class="mt-2 text-xs font-semibold text-emerald-600">Completed</div>
+              </div>
+              <div class="rounded-xl p-5 bg-indigo-50">
+                <div class="text-3xl font-extrabold text-indigo-600">02</div>
+                <div class="text-xs uppercase tracking-wide mt-1 text-slate-600">Proposal</div>
+                <div class="mt-2 text-xs font-semibold text-amber-600">In Progress</div>
+              </div>
+              <div class="rounded-xl p-5 bg-fuchsia-50">
+                <div class="text-3xl font-extrabold text-fuchsia-600">03</div>
+                <div class="text-xs uppercase tracking-wide mt-1 text-slate-600">Prototype</div>
+                <div class="mt-2 text-xs font-semibold text-slate-500">Upcoming</div>
+              </div>
+            </div>
+            <div class="mt-6 rounded-xl ring-soft p-4">
+              <p class="text-sm text-slate-600">
+                Latest update: <span class="font-semibold text-slate-800">TAF (Topic Assessment Form) completed</span>.
+                Draft proposal under review.
+              </p>
+              <div class="mt-3 h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-sky-500 via-indigo-500 to-fuchsia-500" style="width: 28%;">
+                </div>
+              </div>
+              <p class="mt-2 text-xs text-slate-500">Estimated overall progress: ~28%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-10 items-start">
+        <div class="lg:col-span-7">
+          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">About the Project</h2>
+          <p class="mt-4 text-slate-600 leading-relaxed">
+            SinhalaLearn is a research initiative to build a <strong>localized, trustworthy</strong> AI assistant for
+            Sri Lanka’s Sinhala‑medium education.
+            The system focuses on <strong>document processing & embeddings</strong>, <strong>voice/text Q&A
+              (RAG)</strong>, and <strong>semantic answer evaluation</strong>,
+            with a core design principle of <strong>offline usability</strong> for rural schools.
+          </p>
+          <ul class="mt-4 grid sm:grid-cols-2 gap-3 text-sm text-slate-700">
+            <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-sky-500"></span>
+              Source‑grounded answers (zero‑hallucination goal)</li>
+            <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-indigo-500"></span> Sinhala OCR
+              (printed + handwritten)</li>
+            <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-fuchsia-500"></span> Offline
+              embeddings & search</li>
+            <li class="flex items-start gap-2"><span class="mt-1 h-2 w-2 rounded-full bg-emerald-500"></span>
+              Explainable grading feedback</li>
+          </ul>
+        </div>
+        <div class="lg:col-span-5">
+          <div class="glass rounded-2xl p-6 shadow-soft border border-slate-200/60 bg-white">
+            <h3 class="font-bold">Quick Facts</h3>
+            <dl class="mt-3 grid grid-cols-2 gap-4 text-sm">
+              <div>
+                <dt class="text-slate-500">Cohort</dt>
+                <dd class="font-semibold">SLIIT 2025</dd>
+              </div>
+              <div>
+                <dt class="text-slate-500">Group</dt>
+                <dd class="font-semibold">CoEAI – Centre of Excellence for AI</dd>
+              </div>
+              <div>
+                <dt class="text-slate-500">Module</dt>
+                <dd class="font-semibold">IT4010 Research Project</dd>
+              </div>
+              <div>
+                <dt class="text-slate-500">Specialization</dt>
+                <dd class="font-semibold">Software Engineering</dd>
+              </div>
+            </dl>
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="tag">SinhalaLearn (mobile)</span>
+              <span class="tag">Flutter</span>
+              <span class="tag">PyTorch</span>
+              <span class="tag">Tesseract</span>
+              <span class="tag">mBERT/XLM‑R</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Components -->
+  <section id="components" class="py-12 md:py-16 bg-white border-t border-slate-200/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">Project Components</h2>
+        <span class="text-xs text-slate-500">Mapped to team responsibilities</span>
+      </div>
+
+      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="rounded-2xl p-6 border border-slate-200/70 bg-slate-50">
+          <h3 class="font-bold">Sinhala Document Processing & Embedding</h3>
+          <p class="mt-2 text-sm text-slate-600">OCR for printed & handwritten Sinhala, preprocessing, embeddings,
+            offline index.</p>
+          <div class="mt-4 text-xs text-slate-500">Lead: <span class="font-semibold">Ranaweera P.H.K</span></div>
+        </div>
+        <div class="rounded-2xl p-6 border border-slate-200/70">
+          <h3 class="font-bold">Resource‑Based Q&A (Voice)</h3>
+          <p class="mt-2 text-sm text-slate-600">Whisper‑based STT tuned for SL accents; hybrid TTS; citations in voice
+            answers.</p>
+          <div class="mt-4 text-xs text-slate-500">Lead: <span class="font-semibold">Sathsara T.T.D</span></div>
+        </div>
+        <div class="rounded-2xl p-6 border border-slate-200/70">
+          <h3 class="font-bold">Resource‑Based Q&A (Text)</h3>
+          <p class="mt-2 text-sm text-slate-600">Sinhala‑aware RAG with strict source binding and contextual
+            summarization.</p>
+          <div class="mt-4 text-xs text-slate-500">Lead: <span class="font-semibold">Jayananda L.V.O.R</span></div>
+        </div>
+        <div class="rounded-2xl p-6 border border-slate-200/70">
+          <h3 class="font-bold">Evaluation of Answers</h3>
+          <p class="mt-2 text-sm text-slate-600">Semantic grading (XLM‑R), rule‑based concept checks, explainable
+            feedback.</p>
+          <div class="mt-4 text-xs text-slate-500">Lead: <span class="font-semibold">Lokuhewage M.M</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section id="timeline" class="py-12 md:py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">Timeline & Milestones</h2>
+      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="rounded-2xl p-6 bg-white border border-slate-200/70">
+          <div class="text-xs font-semibold text-emerald-700 bg-emerald-50 inline-block px-2 py-1 rounded-full">
+            Completed</div>
+          <h3 class="mt-3 font-bold">TAF – Topic Assessment</h3>
+          <p class="mt-1 text-sm text-slate-600">Topic approved; scope, objectives, and roles finalized.</p>
+        </div>
+        <div class="rounded-2xl p-6 bg-white border border-slate-200/70">
+          <div class="text-xs font-semibold text-amber-700 bg-amber-50 inline-block px-2 py-1 rounded-full">In Progress
+          </div>
+          <h3 class="mt-3 font-bold">Research Proposal</h3>
+          <p class="mt-1 text-sm text-slate-600">Background, literature, methodology, requirements, budget.</p>
+        </div>
+        <div class="rounded-2xl p-6 bg-white border border-slate-200/70">
+          <div class="text-xs font-semibold text-slate-700 bg-slate-100 inline-block px-2 py-1 rounded-full">Upcoming
+          </div>
+          <h3 class="mt-3 font-bold">Prototype v1</h3>
+          <p class="mt-1 text-sm text-slate-600">OCR + Embeddings + Text RAG (offline searchable index).</p>
+        </div>
+        <div class="rounded-2xl p-6 bg-white border border-slate-200/70">
+          <div class="text-xs font-semibold text-slate-700 bg-slate-100 inline-block px-2 py-1 rounded-full">Upcoming
+          </div>
+          <h3 class="mt-3 font-bold">Voice Q&A Beta</h3>
+          <p class="mt-1 text-sm text-slate-600">Accent‑aware STT and TTS with source citations.</p>
+        </div>
+        <div class="rounded-2xl p-6 bg-white border border-slate-200/70">
+          <div class="text-xs font-semibold text-slate-700 bg-slate-100 inline-block px-2 py-1 rounded-full">Upcoming
+          </div>
+          <h3 class="mt-3 font-bold">Evaluation Module</h3>
+          <p class="mt-1 text-sm text-slate-600">Semantic grading and teacher feedback console.</p>
+        </div>
+        <div class="rounded-2xl p-6 bg-white border border-slate-200/70">
+          <div class="text-xs font-semibold text-slate-700 bg-slate-100 inline-block px-2 py-1 rounded-full">Upcoming
+          </div>
+          <h3 class="mt-3 font-bold">Final Report & Demo</h3>
+          <p class="mt-1 text-sm text-slate-600">Live demo + documentation + dataset cards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Documents -->
+  <section id="documents" class="py-12 md:py-16 bg-white border-t border-slate-200/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">Documents</h2>
+        <span class="text-xs text-slate-500">Last updated: today</span>
+      </div>
+
+      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <a class="group rounded-2xl p-6 border border-slate-200/70 bg-slate-50 hover:bg-slate-100 transition"
+          href="docs/TAF Form_25_26J_448_V3.pdf" target="_blank">
+          <div class="flex items-center justify-between">
+            <h3 class="font-bold">Topic Assessment Form (TAF)</h3>
+            <span class="text-xs px-2 py-1 rounded-full bg-emerald-100 text-emerald-700">PDF</span>
+          </div>
+          <p class="mt-2 text-sm text-slate-600">Approved topic, objectives, roles & novelty.</p>
+          <p class="mt-3 text-xs text-slate-500 group-hover:text-slate-700">Open document →</p>
+        </a>
+
+        <a class="group rounded-2xl p-6 border border-slate-200/70" href="#" target="_blank">
+          <div class="flex items-center justify-between">
+            <h3 class="font-bold">Proposal (Draft)</h3>
+            <span class="text-xs px-2 py-1 rounded-full bg-amber-100 text-amber-700">In Progress</span>
+          </div>
+          <p class="mt-2 text-sm text-slate-600">Background, literature, methodology, requirements, budget.</p>
+          <p class="mt-3 text-xs text-slate-500 group-hover:text-slate-700">Coming soon</p>
+        </a>
+
+        <a class="group rounded-2xl p-6 border border-slate-200/70" href="#" target="_blank">
+          <div class="flex items-center justify-between">
+            <h3 class="font-bold">Ethics & Dataset Notes</h3>
+            <span class="text-xs px-2 py-1 rounded-full bg-slate-100 text-slate-700">Planned</span>
+          </div>
+          <p class="mt-2 text-sm text-slate-600">Consent, privacy, dataset cards for Sinhala resources.</p>
+          <p class="mt-3 text-xs text-slate-500 group-hover:text-slate-700">Pending</p>
+        </a>
+      </div>
+      <!-- <p class="mt-4 text-xs text-slate-500">Tip: for GitHub Pages, place your PDFs in <code>/docs</code> and update the
+        links above.</p> -->
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section id="team" class="py-12 md:py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">Research Team</h2>
+      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="rounded-2xl p-6 bg-white border border-slate-200/70">
+          <h3 class="font-bold">Ranaweera P.H.K</h3>
+          <p class="text-sm text-slate-600">Sinhala Document Processing & Embedding</p>
+        </div>
+        <div class="rounded-2xl p-6 bg-white border border-slate-200/70">
+          <h3 class="font-bold">Jayananda L.V.O.R</h3>
+          <p class="text-sm text-slate-600">Resource‑Based Q&A (Text)</p>
+        </div>
+        <div class="rounded-2xl p-6 bg-white border border-slate-200/70">
+          <h3 class="font-bold">Lokuhewage M.M</h3>
+          <p class="text-sm text-slate-600">Evaluation of Answers</p>
+        </div>
+        <div class="rounded-2xl p-6 bg-white border border-slate-200/70">
+          <h3 class="font-bold">Sathsara T.T.D</h3>
+          <p class="text-sm text-slate-600">Resource‑Based Q&A (Voice)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200/70 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="flex justify-center">
+        <p class="text-sm text-slate-500 text-center">© 2025 SinhalaLearn Research Team — SLIIT</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
