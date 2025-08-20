@@ -2,7 +2,6 @@
 export interface TeamMember {
   name: string;
   role: string;
-  component: string;
 }
 
 export interface ProjectComponent {
