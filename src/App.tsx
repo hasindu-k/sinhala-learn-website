@@ -7,20 +7,23 @@ import Timeline from "./components/Timeline/Timeline";
 import Documents from "./components/Documents/Documents";
 import Team from "./components/Team/Team";
 import Footer from "./components/Footer/Footer";
+import { ThemeProvider } from "./components/ThemeProvider";
 import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Hero />
-      <About />
-      <Components />
-      <Timeline />
-      <Documents />
-      <Team />
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="App bg-white dark:bg-slate-900 transition-colors duration-300">
+        <Header />
+        <Hero />
+        <About />
+        <Components />
+        <Timeline />
+        <Documents />
+        <Team />
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 

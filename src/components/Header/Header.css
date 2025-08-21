@@ -3,6 +3,11 @@
     /* fallback (sky-500) */
 }
 
+.dark .active-link {
+    color: #38bdf8;
+    /* sky-400 for better contrast in dark mode */
+}
+
 .active-link::after {
     content: "";
     position: absolute;
