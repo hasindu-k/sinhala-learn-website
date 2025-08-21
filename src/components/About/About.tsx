@@ -3,7 +3,10 @@ import "./About.css";
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-12 md:py-16">
+    <section
+      id="about"
+      className="py-12 md:py-16 border-t border-slate-200/70 dark:border-slate-700"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-10 items-start">
           <div className="lg:col-span-7">
