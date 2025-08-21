@@ -25,6 +25,12 @@ const Team: React.FC = () => {
                 </div>
               )}
 
+              <img
+                src={member.image || "member.png"}
+                alt={member.name}
+                className="h-24 w-24 rounded-full object-cover shadow-md"
+              />
+
               <h3 className="font-bold mt-6">{member.name}</h3>
               <p className="text-sm text-slate-600">{member.role}</p>
             </div>
@@ -37,8 +43,14 @@ const Team: React.FC = () => {
           {supervisors.map((sup, index) => (
             <div
               key={index}
-              className="rounded-2xl p-6 bg-white border border-slate-200/70 w-64"
+              className="rounded-2xl p-6 bg-white border border-slate-200/70 w-64 flex flex-col items-center text-center"
             >
+              <img
+                src={sup.image ? sup.image : "member.png"}
+                alt={sup.name}
+                className="h-24 w-24 rounded-full object-cover shadow-md mb-4"
+              />
+
               <h3 className="font-bold">{sup.name}</h3>
               <p className="text-sm text-slate-600">{sup.role}</p>
             </div>

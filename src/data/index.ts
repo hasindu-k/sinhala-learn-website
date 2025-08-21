@@ -11,6 +11,7 @@ export const teamMembers: TeamMember[] = [
     name: "Lokuhewage M.M",
     role: "Evaluation of Answers",
     isLeader: true,
+    // image: "/images/team/lokuhewage.jpg",
   },
   {
     name: "Ranaweera P.H.K",
@@ -30,10 +31,12 @@ export const supervisors: Supervisor[] = [
   {
     name: "Prof. Dilshan De Silva",
     role: "Supervisor",
+    // image: "supervisor.png",
   },
   {
     name: "Ms. Chamali Pabasara",
     role: "Co-Supervisor",
+    // image: "supervisor.png",
   },
 ];
 
