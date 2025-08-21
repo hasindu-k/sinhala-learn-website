@@ -35,7 +35,10 @@ const Header: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="h-16 flex items-center justify-between">
           {/* Logo */}
-          <button className="flex items-center gap-3">
+          <button
+            onClick={() => navigate("/sinhala-learn-website/")}
+            className="flex items-center gap-3"
+          >
             <span className="inline-flex h-9 w-9 rounded-xl bg-gradient-to-br from-sky-500 via-indigo-500 to-fuchsia-500 shadow-soft"></span>
             <span className="text-lg font-extrabold tracking-tight text-slate-900 dark:text-white">
               SinhalaLearn
