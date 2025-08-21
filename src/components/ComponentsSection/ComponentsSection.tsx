@@ -22,9 +22,7 @@ const ComponentsSection: React.FC = () => {
           {projectComponents.map((component, index) => (
             <div
               key={index}
-              className={`rounded-2xl p-6 border border-slate-200/70 ${
-                index === 0 ? "bg-slate-50" : ""
-              }`}
+              className="rounded-2xl p-6 border border-slate-200/70 bg-slate-50 hover:bg-slate-100 transition-all duration-300 shadow-sm hover:shadow-md"
             >
               <h3 className="font-bold">{component.title}</h3>
               <p className="mt-2 text-sm text-slate-600">
