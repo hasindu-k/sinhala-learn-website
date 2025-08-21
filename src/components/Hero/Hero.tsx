@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <span className="tag">IT4010 Research Project – SLIIT 2025</span>
-            <h1 className="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight">
+            <h1 className="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
               AI‑Powered Educational Assistant for{" "}
               <span
                 className="bg-clip-text text-transparent"
