@@ -12,23 +12,31 @@ export const teamMembers: TeamMember[] = [
     role: "Evaluation of Answers",
     isLeader: true,
     // image: "images/team/lokuhewage.png",
-    image: "images/team/lokuhewage2.jpeg",
+    image: "images/team/lokuhewage2.png",
+    email: "miyurilokuhewage15@gmail.com",
+    linkedin: "https://www.linkedin.com/in/miyurilokuhewage/",
   },
   {
     name: "Ranaweera P.H.K",
     role: "Sinhala Document Processing & Embedding",
     // image: "images/team/ranaweera.jpg",
     image: "images/team/ranaweera2.jpeg",
+    email: "koshithahasindu@gmail.com",
+    linkedin: "https://www.linkedin.com/in/hasindu-k/",
   },
   {
     name: "Jayananda L.V.O.R",
     role: "Resource‑Based Q&A (Text)",
     image: "images/team/jayananda.jpeg",
+    email: "oshadi.jayananda@gmail.com",
+    linkedin: "https://www.linkedin.com/in/oshadi-jayananda-5399652a3/",
   },
   {
     name: "Sathsara T.T.D",
     role: "Resource‑Based Q&A (Voice)",
     image: "images/team/sathsara.jpeg",
+    email: "sdenuwansathsara0412@gmail.com",
+    linkedin: "https://www.linkedin.com/in/denuwan-sathsara-0b05712a7/",
   },
 ];
 
@@ -36,12 +44,16 @@ export const supervisors: Supervisor[] = [
   {
     name: "Prof. Dilshan De Silva",
     role: "Supervisor",
-    // image: "supervisor.png",
+    image: "images/team/supervisor.png",
+    email: "dilshan.i@sliit.lk",
+    linkedin: "https://www.linkedin.com/in/prof-dilshan-de-silva-96384573/",
   },
   {
     name: "Ms. Chamali Pabasara",
     role: "Co-Supervisor",
     image: "images/team/co-supervisor.png",
+    email: "chamali.p@sliit.lk",
+    linkedin: "https://www.linkedin.com/in/chamali-pabasara-b54130182/",
   },
 ];
 

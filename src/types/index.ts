@@ -3,13 +3,17 @@ export interface TeamMember {
   name: string;
   role: string;
   isLeader?: boolean;
-  image?: string;
+  image: string;
+  email: string;
+  linkedin: string;
 }
 
 export interface Supervisor {
   name: string;
   role: string;
-  image?: string;
+  image: string;
+  email: string;
+  linkedin: string;
 }
 
 export interface ProjectComponent {

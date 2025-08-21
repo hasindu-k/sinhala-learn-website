@@ -1,6 +1,7 @@
 import React from "react";
 import { teamMembers, supervisors } from "../../data";
 import "./Team.css";
+import { FaEnvelope, FaLinkedin } from "react-icons/fa";
 
 const Team: React.FC = () => {
   return (
@@ -33,6 +34,28 @@ const Team: React.FC = () => {
 
               <h3 className="font-bold mt-6">{member.name}</h3>
               <p className="text-sm text-slate-600">{member.role}</p>
+
+              {/* Links */}
+              <div className="flex gap-4 mt-4">
+                {member.email && (
+                  <a
+                    href={`mailto:${member.email}`}
+                    className="text-slate-500 hover:text-emerald-600"
+                  >
+                    <FaEnvelope size={20} />
+                  </a>
+                )}
+                {member.linkedin && (
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-500 hover:text-emerald-600"
+                  >
+                    <FaLinkedin size={20} />
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>
@@ -53,6 +76,27 @@ const Team: React.FC = () => {
 
               <h3 className="font-bold">{sup.name}</h3>
               <p className="text-sm text-slate-600">{sup.role}</p>
+
+              <div className="flex gap-4 mt-4">
+                {sup.email && (
+                  <a
+                    href={`mailto:${sup.email}`}
+                    className="text-slate-500 hover:text-emerald-600"
+                  >
+                    <FaEnvelope size={20} />
+                  </a>
+                )}
+                {sup.linkedin && (
+                  <a
+                    href={sup.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-500 hover:text-emerald-600"
+                  >
+                    <FaLinkedin size={20} />
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>
