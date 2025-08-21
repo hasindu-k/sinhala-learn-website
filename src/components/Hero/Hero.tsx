@@ -80,7 +80,7 @@ const Hero: React.FC = () => {
           </div>
           <div className="relative">
             <div className="rounded-2xl border border-slate-200/60 bg-white shadow-soft p-6">
-              <div className="grid grid-cols-3 gap-4 text-center">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-center">
                 <div className="rounded-xl p-5 bg-sky-50">
                   <div className="text-3xl font-extrabold text-sky-600">01</div>
                   <div className="text-xs uppercase tracking-wide mt-1 text-slate-600">
