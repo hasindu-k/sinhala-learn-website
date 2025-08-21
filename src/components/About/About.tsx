@@ -10,7 +10,7 @@ const About: React.FC = () => {
             <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
               About the Project
             </h2>
-            <p className="mt-4 text-slate-600 leading-relaxed">
+            <p className="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed">
               SinhalaLearn is a research initiative to build a{" "}
               <strong>localized, trustworthy</strong> AI assistant for Sri
               Lanka's Sinhala‑medium education. The system focuses on{" "}
@@ -19,7 +19,7 @@ const About: React.FC = () => {
               <strong>semantic answer evaluation</strong>, with a core design
               principle of <strong>offline usability</strong> for rural schools.
             </p>
-            <ul className="mt-4 grid sm:grid-cols-2 gap-3 text-sm text-slate-700">
+            <ul className="mt-4 grid sm:grid-cols-2 gap-3 text-sm text-slate-700 dark:text-slate-300">
               <li className="flex items-start gap-2">
                 <span className="mt-1 h-2 w-2 rounded-full bg-sky-500"></span>
                 Source‑grounded answers (zero‑hallucination goal)

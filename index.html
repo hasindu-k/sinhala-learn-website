@@ -8,6 +8,19 @@
     <title>SinhalaLearn | AI‑Powered Educational Assistant for Sinhala Resources</title>
     <meta name="description"
       content="Public progress site for the SinhalaLearn research project (IT4010 Research Project – SLIIT 2025).">
+      <!-- index.html, inside <head> -->
+      <script>
+        (() => {
+          try {
+            const ls = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const isDark = ls ? ls === 'dark' : prefersDark;
+            if (isDark) document.documentElement.classList.add('dark');
+            else document.documentElement.classList.remove('dark');
+          } catch { }
+        })();
+      </script>
+
   </head>
   <body>
     <div id="root"></div>
