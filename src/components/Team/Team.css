@@ -1,3 +1,10 @@
 .team-background {
-    background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
-    background-size: 20px 20px; }
+    background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+    /* slate-200 */
+    background-size: 20px 20px;
+}
+
+:where(.dark) .team-background {
+    background-image: radial-gradient(#334155 1px, transparent 1px);
+    /* slate-700 */
+}
