@@ -26,9 +26,9 @@ const Team: React.FC = () => {
               )}
 
               <img
-                src={member.image || "member.png"}
+                src={member.image ? member.image : "images/member.png"}
                 alt={member.name}
-                className="h-24 w-24 rounded-full object-cover shadow-md"
+                className="h-48 w-48 rounded-full object-cover shadow-md"
               />
 
               <h3 className="font-bold mt-6">{member.name}</h3>
@@ -46,9 +46,9 @@ const Team: React.FC = () => {
               className="rounded-2xl p-6 bg-white border border-slate-200/70 w-64 flex flex-col items-center text-center"
             >
               <img
-                src={sup.image ? sup.image : "member.png"}
+                src={sup.image ? sup.image : "images/member.png"}
                 alt={sup.name}
-                className="h-24 w-24 rounded-full object-cover shadow-md mb-4"
+                className="h-48 w-48 rounded-full object-cover shadow-md mb-4"
               />
 
               <h3 className="font-bold">{sup.name}</h3>

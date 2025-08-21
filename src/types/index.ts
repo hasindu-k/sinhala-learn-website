@@ -3,11 +3,13 @@ export interface TeamMember {
   name: string;
   role: string;
   isLeader?: boolean;
+  image?: string;
 }
 
 export interface Supervisor {
   name: string;
   role: string;
+  image?: string;
 }
 
 export interface ProjectComponent {

@@ -11,19 +11,24 @@ export const teamMembers: TeamMember[] = [
     name: "Lokuhewage M.M",
     role: "Evaluation of Answers",
     isLeader: true,
-    // image: "/images/team/lokuhewage.jpg",
+    // image: "images/team/lokuhewage.png",
+    image: "images/team/lokuhewage2.jpeg",
   },
   {
     name: "Ranaweera P.H.K",
     role: "Sinhala Document Processing & Embedding",
+    // image: "images/team/ranaweera.jpg",
+    image: "images/team/ranaweera2.jpeg",
   },
   {
     name: "Jayananda L.V.O.R",
     role: "Resource‑Based Q&A (Text)",
+    image: "images/team/jayananda.jpeg",
   },
   {
     name: "Sathsara T.T.D",
     role: "Resource‑Based Q&A (Voice)",
+    image: "images/team/sathsara.jpeg",
   },
 ];
 
@@ -36,7 +41,7 @@ export const supervisors: Supervisor[] = [
   {
     name: "Ms. Chamali Pabasara",
     role: "Co-Supervisor",
-    // image: "supervisor.png",
+    image: "images/team/co-supervisor.png",
   },
 ];
 
