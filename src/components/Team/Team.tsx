@@ -22,7 +22,7 @@ const Team: React.FC = () => {
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="relative rounded-2xl p-6 bg-white dark:bg-slate-800 border border-slate-200/70 dark:border-slate-700 flex flex-col items-center text-center overflow-hidden transition-colors"
+              className="relative rounded-2xl p-6 bg-white dark:bg-slate-800 border border-slate-200/70 dark:border-slate-700 flex flex-col items-center text-center overflow-hidden transition duration-500 hover:rotate-1 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/30"
             >
               {/* Corner Ribbon */}
               {member.isLeader && (
@@ -77,7 +77,7 @@ const Team: React.FC = () => {
           {supervisors.map((sup, index) => (
             <div
               key={index}
-              className="rounded-2xl p-6 bg-white dark:bg-slate-800 border border-slate-200/70 dark:border-slate-700 w-64 flex flex-col items-center text-center transition-colors"
+              className="rounded-2xl p-6 bg-white dark:bg-slate-800 border border-slate-200/70 dark:border-slate-700 w-64 flex flex-col items-center text-center transition duration-500 hover:rotate-1 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/30"
             >
               <img
                 src={sup.image ? sup.image : "images/member.png"}

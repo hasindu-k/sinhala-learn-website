@@ -97,7 +97,7 @@ const Hero: React.FC = () => {
           <div className="relative">
             <div className="rounded-2xl border border-slate-200/60 dark:border-slate-700 bg-white dark:bg-slate-900/60 shadow-soft p-6 backdrop-blur transition-colors">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-center">
-                <div className="rounded-xl p-5 bg-sky-50 dark:bg-sky-900/30 transition-colors">
+                <div className="rounded-xl p-5 bg-sky-50 dark:bg-sky-900/30 transition-colors status-card">
                   <div className="text-3xl font-extrabold text-sky-600 dark:text-sky-300">
                     01
                   </div>
@@ -109,7 +109,7 @@ const Hero: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="rounded-xl p-5 bg-indigo-50 dark:bg-indigo-900/30 transition-colors">
+                <div className="rounded-xl p-5 bg-indigo-50 dark:bg-indigo-900/30 transition-colors status-card">
                   <div className="text-3xl font-extrabold text-indigo-600 dark:text-indigo-300">
                     02
                   </div>
@@ -121,7 +121,7 @@ const Hero: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="rounded-xl p-5 bg-fuchsia-50 dark:bg-fuchsia-900/30 transition-colors">
+                <div className="rounded-xl p-5 bg-fuchsia-50 dark:bg-fuchsia-900/30 transition-colors status-card">
                   <div className="text-3xl font-extrabold text-fuchsia-600 dark:text-fuchsia-300">
                     03
                   </div>
@@ -150,8 +150,11 @@ const Hero: React.FC = () => {
                   />
                 </div>
 
-                <p className="mt-2 text-xs text-slate-500 dark:text-slate-400 transition-colors">
+                <p className="mt-2 text-xs text-slate-500 dark:text-slate-400 transition-all duration-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:scale-105 relative group">
                   Estimated overall progress: ~{progress}%
+                  <span className="absolute left-1/2 -translate-x-1/2 mt-6 w-max px-2 py-1 text-xs rounded-md bg-slate-800 text-white dark:bg-slate-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    Calculated from completed and in-progress milestones
+                  </span>
                 </p>
               </div>
             </div>
