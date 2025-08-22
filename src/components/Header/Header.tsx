@@ -8,8 +8,8 @@ const sections = [
   "components",
   "timeline",
   "documents",
-  "team",
   "supervisors",
+  "team",
 ];
 
 const Header: React.FC = () => {
@@ -29,12 +29,20 @@ const Header: React.FC = () => {
       { threshold: 0.6 }
     );
 
+    const elements: HTMLElement[] = [];
+
     sections.forEach((id) => {
       const el = document.getElementById(id);
-      if (el) observer.observe(el);
+      if (el) {
+        observer.observe(el);
+        elements.push(el);
+      }
     });
 
-    return () => observer.disconnect();
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+      observer.disconnect();
+    };
   }, []);
 
   return (
