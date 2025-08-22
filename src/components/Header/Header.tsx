@@ -3,7 +3,14 @@ import { ThemeToggle } from "../ThemeToggle";
 import "./Header.css";
 import { useNavigate } from "react-router-dom";
 
-const sections = ["about", "components", "timeline", "documents", "team"];
+const sections = [
+  "about",
+  "components",
+  "timeline",
+  "documents",
+  "team",
+  "supervisors",
+];
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -83,6 +90,7 @@ const Header: React.FC = () => {
               <a
                 key={id}
                 href={`#${id}`}
+                onClick={() => setMenuOpen(false)}
                 className={`relative pb-1 text-slate-700 dark:text-slate-300 ${
                   activeSection === id
                     ? "active-link"
@@ -92,9 +100,6 @@ const Header: React.FC = () => {
                 {id.charAt(0).toUpperCase() + id.slice(1)}
               </a>
             ))}
-            <a href="#documents" className="btn btn-primary text-sm">
-              View Documents
-            </a>
           </nav>
         )}
       </div>
