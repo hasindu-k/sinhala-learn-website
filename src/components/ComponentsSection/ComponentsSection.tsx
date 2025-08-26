@@ -9,14 +9,9 @@ const ComponentsSection: React.FC = () => {
       className="py-12 md:py-16 bg-white dark:bg-slate-900 border-t border-b border-slate-200/70 dark:border-slate-700 transition-colors"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-end justify-between gap-4">
-          <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 transition-colors">
-            Project Components
-          </h2>
-          <span className="text-xs text-slate-500 dark:text-slate-400 transition-colors">
-            Mapped to team responsibilities
-          </span>
-        </div>
+        <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 transition-colors">
+          Project Components
+        </h2>
 
         <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {projectComponents.map((component, index) => (
