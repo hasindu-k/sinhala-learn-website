@@ -2,24 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>SinhalaLearn | AI‑Powered Educational Assistant for Sinhala Resources</title>
     <meta name="description"
-      content="Public progress site for the SinhalaLearn research project (IT4010 Research Project – SLIIT 2025).">
-      <!-- index.html, inside <head> -->
-      <script>
-        (() => {
-          try {
-            const ls = localStorage.getItem('theme');
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const isDark = ls ? ls === 'dark' : prefersDark;
-            if (isDark) document.documentElement.classList.add('dark');
-            else document.documentElement.classList.remove('dark');
-          } catch { }
-        })();
-      </script>
+      content="Public progress site for the SinhalaLearn research project (IT4010 Research Project – SLIIT 2025)." />
+    <meta name="keywords"
+      content="Sinhala, AI, Education, SLIIT, Research, SinhalaLearn, Assistant, Learning, Sri Lanka" />
+    <meta name="robots" content="index, follow" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="SinhalaLearn | AI‑Powered Educational Assistant for Sinhala Resources" />
+    <meta property="og:description" content="Public progress site for the SinhalaLearn research project (IT4010 Research Project – SLIIT 2025)." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sinhala-learn.example.com" />
+    <meta property="og:image" content="/logo-with-bg.png" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SinhalaLearn | AI‑Powered Educational Assistant for Sinhala Resources" />
+    <meta name="twitter:description" content="Public progress site for the SinhalaLearn research project (IT4010 Research Project – SLIIT 2025)." />
+    <meta name="twitter:image" content="/logo-with-bg.png" />
+    <!-- index.html, inside <head> -->
+    <script>
+      (() => {
+        try {
+          const ls = localStorage.getItem('theme');
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const isDark = ls ? ls === 'dark' : prefersDark;
+          if (isDark) document.documentElement.classList.add('dark');
+          else document.documentElement.classList.remove('dark');
+        } catch { }
+      })();
+    </script>
 
   </head>
   <body>
