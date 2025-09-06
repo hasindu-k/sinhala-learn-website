@@ -23,6 +23,8 @@
     <meta name="twitter:description" content="Public progress site for the SinhalaLearn research project (IT4010 Research Project – SLIIT 2025)." />
     <meta name="twitter:image" content="/logo-with-bg.png" />
     <!-- index.html, inside <head> -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+        as="style">
     <script>
       (() => {
         try {
@@ -34,6 +36,52 @@
         } catch { }
       })();
     </script>
+    <style>
+      /* Critical CSS for faster FCP on mobile */
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+      :root {
+        --grad: linear-gradient(135deg, #0ea5e9 0%, #6366f1 50%, #a855f7 100%);
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      }
+      .App {
+        text-align: center;
+      }
+      .active-link {
+        color: #0ea5e9;
+      }
+      .dark .active-link {
+        color: #38bdf8;
+      }
+      .active-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 3px;
+        border-radius: 2px;
+        background: linear-gradient(to right, #0ea5e9, #6366f1, #d946ef);
+      }
+      .timeline-background {
+        background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+        background-size: 20px 20px;
+      }
+      :where(.dark) .timeline-background {
+        background-image: radial-gradient(#334155 1px, transparent 1px);
+      }
+      .team-background {
+        background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+        background-size: 20px 20px;
+      }
+      :where(.dark) .team-background {
+        background-image: radial-gradient(#334155 1px, transparent 1px);
+      }
+    </style>
 
   </head>
   <body>
