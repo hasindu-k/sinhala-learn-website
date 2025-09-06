@@ -27,6 +27,7 @@ const Team: React.FC = () => {
               <img
                 src={sup.image ? sup.image : "images/member.png"}
                 alt={sup.name}
+                loading="lazy"
                 className="h-48 w-48 rounded-full object-cover shadow-md mb-4"
               />
 
@@ -83,6 +84,7 @@ const Team: React.FC = () => {
               <img
                 src={member.image ? member.image : "images/member.png"}
                 alt={member.name}
+                loading="lazy"
                 className="h-48 w-48 rounded-full object-cover shadow-md"
               />
 
