@@ -12,7 +12,7 @@ export const teamMembers: TeamMember[] = [
     role: "Evaluation of Answers",
     isLeader: true,
     // image: "images/team/lokuhewage.png",
-    image: "images/team/lokuhewage2.png",
+    image: "images/team/lokuhewage3.png",
     email: "miyurilokuhewage15@gmail.com",
     linkedin: "https://www.linkedin.com/in/miyurilokuhewage/",
   },
