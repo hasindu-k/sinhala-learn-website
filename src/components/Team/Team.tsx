@@ -24,12 +24,15 @@ const Team: React.FC = () => {
               key={index}
               className="rounded-2xl p-6 bg-white dark:bg-slate-800 border border-slate-200/70 dark:border-slate-700 w-64 flex flex-col items-center text-center transition duration-500 hover:rotate-1 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/30"
             >
-              {/* <img
-                src={sup.image ? sup.image : "images/member.png"}
+              <img
+                src={sup.image ? sup.image : "images/member.webp"}
+                onError={(e) => {
+                  e.currentTarget.src = "images/member.webp";
+                }}
                 alt={sup.name}
                 loading="lazy"
                 className="h-48 w-48 rounded-full object-cover shadow-md mb-4"
-              /> */}
+              />
 
               <h3 className="font-bold text-slate-900 dark:text-slate-100 transition-colors">
                 {sup.name}
@@ -81,12 +84,15 @@ const Team: React.FC = () => {
                 </div>
               )}
 
-              {/* <img
-                src={member.image ? member.image : "images/member.png"}
+              <img
+                src={member.image ? member.image : "images/member.webp"}
+                onError={(e) => {
+                  e.currentTarget.src = "images/member.webp";
+                }}
                 alt={member.name}
                 loading="lazy"
                 className="h-48 w-48 rounded-full object-cover shadow-md"
-              /> */}
+              />
 
               <h3 className="font-bold mt-6 text-slate-900 dark:text-slate-100 transition-colors">
                 {member.name}
