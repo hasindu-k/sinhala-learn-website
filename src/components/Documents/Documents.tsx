@@ -2,13 +2,12 @@ import React from "react";
 import { HiExternalLink } from "react-icons/hi";
 import { documents } from "../../data";
 import type { Document } from "../../types";
-import "./Documents.css";
 import { useFileSizes } from "../../hooks/useFileSizes";
 
 const Documents: React.FC = () => {
   const docUrls = React.useMemo(
     () => documents.map((d) => d.link),
-    [documents]
+    [documents],
   );
   const sizes = useFileSizes(docUrls);
 
@@ -65,10 +64,15 @@ const Documents: React.FC = () => {
     switch (doc.status) {
       case "completed":
         return "Open document →";
+
       case "in-progress":
-        return `Updated ${formatRelativeTime(doc.lastUpdated!)}`;
+        return doc.lastUpdated
+          ? `Updated ${formatRelativeTime(doc.lastUpdated)}`
+          : "In progress";
+
       case "planned":
         return "Scheduled for development";
+
       default:
         return "";
     }

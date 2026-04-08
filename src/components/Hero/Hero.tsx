@@ -7,20 +7,25 @@ const Hero: React.FC = () => {
 
   useEffect(() => {
     const calculateProgress = () => {
-      const totalWeight = milestones.reduce((sum, m) => sum + m.weight, 0);
-      const completedWeight = milestones
-        .filter((m) => m.status === "completed")
-        .reduce((sum, m) => sum + m.weight, 0);
-      const inProgressWeight = milestones
-        .filter((m) => m.status === "in-progress")
-        .reduce((sum, m) => sum + m.weight * 0.5, 0);
+      const stages = [
+        { name: "Proposal", status: "completed", weight: 0.3 },
+        { name: "Progress", status: "completed", weight: 0.4 },
+        { name: "Final", status: "upcoming", weight: 0.3 },
+      ];
 
-      return Math.round(
-        ((completedWeight + inProgressWeight) / totalWeight) * 100
-      );
+      const total = stages.reduce((sum, s) => sum + s.weight, 0);
+
+      const achieved = stages.reduce((sum, s) => {
+        if (s.status === "completed") return sum + s.weight;
+        if (s.status === "in-progress") return sum + s.weight * 0.5;
+        return sum;
+      }, 0);
+
+      return Math.round((achieved / total) * 100);
     };
 
     const target = calculateProgress();
+
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= target) {
@@ -43,7 +48,9 @@ const Hero: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           {/* Left */}
           <div>
-            <span className="tag">IT4010 Research Project – SLIIT 2025</span>
+            <span className="tag">
+              IT4010 Research Project – SLIIT 2025 July
+            </span>
 
             <h1 className="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
               AI‑Powered Educational Assistant for{" "}
@@ -66,14 +73,37 @@ const Hero: React.FC = () => {
               <span className="chip bg-slate-900 text-white dark:bg-slate-200 dark:text-slate-900">
                 RAG
               </span>
+
               <span className="chip bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300">
                 Sinhala OCR
               </span>
+
               <span className="chip bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300">
                 Embeddings
               </span>
-              <span className="chip bg-fuchsia-100 text-fuchsia-700 dark:bg-fuchsia-900/30 dark:text-fuchsia-300">
-                Offline‑first
+
+              <span className="chip bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">
+                Explainable AI
+              </span>
+
+              <span className="chip bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">
+                Automated Grading
+              </span>
+
+              <span className="chip bg-rose-100 text-rose-700 dark:bg-rose-900/30 dark:text-rose-300">
+                Voice AI
+              </span>
+
+              <span className="chip bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300">
+                Accent Adaptation
+              </span>
+
+              <span className="chip bg-teal-100 text-teal-700 dark:bg-teal-900/30 dark:text-teal-300">
+                Low-Resource AI
+              </span>
+
+              <span className="chip bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300">
+                Hallucination Detection
               </span>
             </div>
 
@@ -102,7 +132,7 @@ const Hero: React.FC = () => {
                     01
                   </div>
                   <div className="text-xs uppercase tracking-wide mt-1 text-slate-600 dark:text-slate-300">
-                    TAF
+                    Proposal
                   </div>
                   <div className="mt-2 text-xs font-semibold text-emerald-600 dark:text-emerald-300">
                     Completed
@@ -114,10 +144,10 @@ const Hero: React.FC = () => {
                     02
                   </div>
                   <div className="text-xs uppercase tracking-wide mt-1 text-slate-600 dark:text-slate-300">
-                    Proposal
+                    Progress Evaluation
                   </div>
                   <div className="mt-2 text-xs font-semibold text-amber-600 dark:text-amber-300">
-                    In Progress
+                    Completed
                   </div>
                 </div>
 
@@ -126,7 +156,7 @@ const Hero: React.FC = () => {
                     03
                   </div>
                   <div className="text-xs uppercase tracking-wide mt-1 text-slate-600 dark:text-slate-300">
-                    Prototype
+                    Final Evaluation
                   </div>
                   <div className="mt-2 text-xs font-semibold text-slate-500 dark:text-slate-400">
                     Upcoming
@@ -138,9 +168,10 @@ const Hero: React.FC = () => {
                 <p className="text-sm text-slate-600 dark:text-slate-300 transition-colors">
                   Latest update:{" "}
                   <span className="font-semibold text-slate-800 dark:text-slate-100 transition-colors">
-                    TAF (Topic Assessment Form) completed
+                    Proposal Presentation and Progress Evaluation completed
+                    successfully
                   </span>
-                  . Draft proposal under review.
+                  . Final evaluation phase is currently pending.
                 </p>
 
                 <div className="mt-3 h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden transition-colors">
@@ -155,6 +186,11 @@ const Hero: React.FC = () => {
                   <span className="absolute left-1/2 -translate-x-1/2 mt-6 w-max px-2 py-1 text-xs rounded-md bg-slate-800 text-white dark:bg-slate-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     Calculated from completed and in-progress milestones
                   </span>
+                </p>
+
+                <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
+                  Milestones reflect the structured evaluation process of the
+                  IT4010 Research Project.
                 </p>
               </div>
             </div>

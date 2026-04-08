@@ -11,7 +11,6 @@ export const teamMembers: TeamMember[] = [
     name: "Lokuhewage M.M",
     role: "Evaluation of Answers",
     isLeader: true,
-    // image: "images/team/lokuhewage.png",
     image: "images/team/lokuhewage3.webp",
     email: "miyurilokuhewage15@gmail.com",
     linkedin: "https://www.linkedin.com/in/miyurilokuhewage/",
@@ -19,7 +18,6 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Ranaweera P.H.K",
     role: "Sinhala Document Processing & Embedding",
-    // image: "images/team/ranaweera.jpg",
     image: "images/team/ranaweera2.webp",
     email: "koshithahasindu@gmail.com",
     linkedin: "https://www.linkedin.com/in/hasindu-k/",
@@ -29,7 +27,7 @@ export const teamMembers: TeamMember[] = [
     role: "Resource‑Based Q&A (Text)",
     image: "images/team/jayananda.webp",
     email: "oshadi.jayananda@gmail.com",
-    linkedin: "https://www.linkedin.com/in/oshadi-jayananda-5399652a3/",
+    linkedin: "https://www.linkedin.com/in/oshadi-jayananda/",
   },
   {
     name: "Sathsara T.T.D",
@@ -87,63 +85,115 @@ export const projectComponents: ProjectComponent[] = [
 export const milestones: Milestone[] = [
   {
     status: "completed",
-    title: "TAF – Topic Assessment",
-    description: "Topic approved; scope, objectives, and roles finalized.",
+    title: "Topic Assessment (TAF)",
+    description:
+      "Research topic finalized with defined objectives, scope, and system direction.",
+    weight: 10,
+  },
+  {
+    status: "completed",
+    title: "Research Proposal Presentation",
+    description:
+      "Problem statement, literature review, and proposed methodology presented and approved.",
     weight: 15,
   },
   {
-    status: "in-progress",
-    title: "Research Proposal",
-    description: "Background, literature, methodology, requirements, budget.",
+    status: "completed",
+    title: "Progress Evaluation (Phase 2)",
+    description:
+      "System architecture and core components validated through intermediate evaluation.",
     weight: 20,
   },
   {
-    status: "upcoming",
-    title: "Prototype v1",
-    description: "OCR + Embeddings + Text RAG (offline searchable index).",
-    weight: 25,
+    status: "completed",
+    title: "Core System Development",
+    description:
+      "Implementation of OCR, RAG-based Q&A, voice processing, and answer evaluation modules.",
+    weight: 20,
   },
   {
-    status: "upcoming",
-    title: "Voice Q&A Beta",
-    description: "Accent‑aware STT and TTS with source citations.",
-    weight: 25,
-  },
-  {
-    status: "upcoming",
-    title: "Evaluation Module",
-    description: "Semantic grading and teacher feedback console.",
-    weight: 15,
-  },
-  {
-    status: "upcoming",
-    title: "Final Report & Demo",
-    description: "Live demo + documentation + dataset cards.",
+    status: "in-progress",
+    title: "Research Paper Publication",
+    description:
+      "Paper accepted for publication; currently awaiting payment and final submission process.",
     weight: 10,
+  },
+  {
+    status: "in-progress",
+    title: "System Refinement & Testing",
+    description:
+      "Performance evaluation, accuracy improvements, and usability testing across modules.",
+    weight: 10,
+  },
+  {
+    status: "upcoming",
+    title: "Final Presentation & Demonstration",
+    description:
+      "Comprehensive system demonstration and evaluation before academic panel.",
+    weight: 10,
+  },
+  {
+    status: "upcoming",
+    title: "Final Report Submission",
+    description:
+      "Submission of complete research documentation, results, and system analysis.",
+    weight: 5,
   },
 ];
 
 export const documents: Document[] = [
   {
     title: "Topic Assessment Form (TAF)",
-    description: "Approved topic, objectives, roles & novelty.",
+    description:
+      "Approved research topic including objectives, scope, novelty, and team responsibilities.",
     status: "completed",
     link: "docs/TAF Form_25_26J_448_V3.pdf",
     fileType: "PDF",
-    lastUpdated: new Date(2024, 2, 15),
+    lastUpdated: new Date("2025-08-01"),
     size: "2.4 MB",
   },
+
   {
-    title: "Proposal (Draft)",
-    description: "Background, literature, methodology, requirements, budget.",
+    title: "Research Proposal Report",
+    description:
+      "Detailed proposal including problem statement, literature review, and methodology.",
+    status: "completed",
+    link: "#", // update when available
+    fileType: "PDF",
+    lastUpdated: new Date("2025-08-31"),
+  },
+
+  {
+    title: "Research Paper (Conference Submission)",
+    description:
+      "SinhalaLearn research paper submitted and accepted; currently awaiting publication payment process.",
     status: "in-progress",
     link: "#",
-    fileType: "In Progress",
-    lastUpdated: new Date(2024, 8, 15),
+    fileType: "Draft",
+    lastUpdated: new Date("2026-04-03"),
   },
+
   {
-    title: "Ethics & Dataset Notes",
-    description: "Consent, privacy, dataset cards for Sinhala resources.",
+    title: "System Design & Architecture",
+    description:
+      "Detailed architecture including RAG pipeline, OCR processing, and evaluation module design.",
+    status: "in-progress",
+    link: "#",
+    fileType: "Draft",
+  },
+
+  {
+    title: "Final Report",
+    description:
+      "Comprehensive documentation including methodology, implementation, results, and analysis.",
+    status: "planned",
+    link: "#",
+    fileType: "Planned",
+  },
+
+  {
+    title: "Final Presentation Slides",
+    description: "Slides for final system demonstration and evaluation.",
     status: "planned",
     link: "#",
     fileType: "Planned",
