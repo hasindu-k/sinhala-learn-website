@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { milestones } from "../../data/index";
 import "./Hero.css";
 
 const Hero: React.FC = () => {
