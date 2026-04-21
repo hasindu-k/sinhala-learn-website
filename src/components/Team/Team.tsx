@@ -5,10 +5,13 @@ import { FaEnvelope, FaLinkedin } from "react-icons/fa";
 
 const Team: React.FC = () => {
   return (
-    <section className="py-12 md:py-16 bg-slate-50 dark:bg-slate-900 team-background transition-colors">
+    <section
+      id="about"
+      className="py-12 md:py-16 bg-slate-50 dark:bg-slate-900 team-background transition-colors"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 transition-colors">
-          Research Team
+          About Us
         </h2>
         {/* Supervisors */}
         <h3 className="text-xl font-bold mt-12 text-slate-900 dark:text-slate-100 transition-colors">
@@ -19,9 +22,9 @@ const Team: React.FC = () => {
           id="supervisors"
           className="mt-4 flex flex-wrap justify-center gap-6"
         >
-          {supervisors.map((sup, index) => (
+          {supervisors.map((sup) => (
             <div
-              key={index}
+              key={sup.email}
               className="rounded-2xl p-6 bg-white dark:bg-slate-800 border border-slate-200/70 dark:border-slate-700 w-64 flex flex-col items-center text-center transition duration-500 hover:rotate-1 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/30"
             >
               <img
@@ -72,9 +75,9 @@ const Team: React.FC = () => {
           id="team"
           className="mt-4 grid md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
-          {teamMembers.map((member, index) => (
+          {teamMembers.map((member) => (
             <div
-              key={index}
+              key={member.email}
               className="relative rounded-2xl p-6 bg-white dark:bg-slate-800 border border-slate-200/70 dark:border-slate-700 flex flex-col items-center text-center overflow-hidden transition duration-500 hover:rotate-1 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/30"
             >
               {/* Corner Ribbon */}

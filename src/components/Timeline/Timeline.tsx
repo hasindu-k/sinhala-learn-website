@@ -26,17 +26,21 @@ const Timeline: React.FC = () => {
 
   return (
     <section
-      id="timeline"
+      id="milestones"
       className="py-12 md:py-16 bg-slate-50 dark:bg-slate-900 transition-colors timeline-background"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 transition-colors">
-          Timeline & Milestones
+          Milestones
         </h2>
+        <p className="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">
+          Assessments are shown with date, marks, and status. Use placeholders
+          until official marks are released.
+        </p>
         <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {milestones.map((milestone, index) => (
+          {milestones.map((milestone) => (
             <div
-              key={index}
+              key={milestone.title}
               className="rounded-2xl p-6 bg-white dark:bg-slate-800 border border-slate-200/70 dark:border-slate-700 transition-colors shadow-sm"
             >
               <div
@@ -53,6 +57,12 @@ const Timeline: React.FC = () => {
               </h3>
               <p className="mt-1 text-sm text-slate-600 dark:text-slate-300 transition-colors">
                 {milestone.description}
+              </p>
+              <p className="mt-3 text-xs text-slate-500 dark:text-slate-400">
+                Date: {milestone.date}
+              </p>
+              <p className="text-xs text-slate-500 dark:text-slate-400">
+                Marks: {milestone.marks}
               </p>
             </div>
           ))}

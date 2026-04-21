@@ -33,7 +33,7 @@ export const teamMembers: TeamMember[] = [
     name: "Sathsara T.T.D",
     role: "Resource‑Based Q&A (Voice)",
     image: "images/team/sathsara.webp",
-    email: "sdenuwansathsara0412@gmail.com",
+    email: "denuwansathsara0412@gmail.com",
     linkedin: "https://www.linkedin.com/in/denuwan-sathsara-0b05712a7/",
   },
 ];
@@ -85,115 +85,74 @@ export const projectComponents: ProjectComponent[] = [
 export const milestones: Milestone[] = [
   {
     status: "completed",
-    title: "Topic Assessment (TAF)",
+    title: "Project Proposal",
     description:
-      "Research topic finalized with defined objectives, scope, and system direction.",
-    weight: 10,
-  },
-  {
-    status: "completed",
-    title: "Research Proposal Presentation",
-    description:
-      "Problem statement, literature review, and proposed methodology presented and approved.",
-    weight: 15,
-  },
-  {
-    status: "completed",
-    title: "Progress Evaluation (Phase 2)",
-    description:
-      "System architecture and core components validated through intermediate evaluation.",
+      "Initial proposal submitted with project scope, domain focus, and planned methodology.",
+    date: "September 11, 2025",
+    marks: "Pending",
     weight: 20,
   },
   {
     status: "completed",
-    title: "Core System Development",
+    title: "Progress Presentation 1",
     description:
-      "Implementation of OCR, RAG-based Q&A, voice processing, and answer evaluation modules.",
+      "First progress review completed with module architecture and early implementation outcomes.",
+    date: "January 7, 2026",
+    marks: "Pending",
     weight: 20,
   },
   {
-    status: "in-progress",
-    title: "Research Paper Publication",
+    status: "completed",
+    title: "Progress Presentation 2",
     description:
-      "Paper accepted for publication; currently awaiting payment and final submission process.",
-    weight: 10,
-  },
-  {
-    status: "in-progress",
-    title: "System Refinement & Testing",
-    description:
-      "Performance evaluation, accuracy improvements, and usability testing across modules.",
-    weight: 10,
+      "Second progress review in preparation with integration updates and evaluation metrics.",
+    date: "March 11, 2026",
+    marks: "Pending",
+    weight: 20,
   },
   {
     status: "upcoming",
-    title: "Final Presentation & Demonstration",
+    title: "Final Assessment",
     description:
-      "Comprehensive system demonstration and evaluation before academic panel.",
-    weight: 10,
+      "Final assessment slot reserved for full system demonstration and rubric-based grading.",
+    date: "Placeholder (required): Add official final assessment date",
+    marks: "Pending",
+    weight: 20,
   },
   {
     status: "upcoming",
-    title: "Final Report Submission",
+    title: "Viva",
     description:
-      "Submission of complete research documentation, results, and system analysis.",
-    weight: 5,
+      "Final oral defense milestone reserved for panel Q&A and individual contribution validation.",
+    date: "Placeholder (required): Add official viva date",
+    marks: "Pending",
+    weight: 20,
   },
 ];
 
 export const documents: Document[] = [
   {
-    title: "Topic Assessment Form (TAF)",
+    title: "Project Charter",
     description:
-      "Approved research topic including objectives, scope, novelty, and team responsibilities.",
-    status: "completed",
-    link: "docs/TAF Form_25_26J_448_V3.pdf",
-    fileType: "PDF",
-    lastUpdated: new Date("2025-08-01"),
-    size: "2.4 MB",
-  },
-
-  {
-    title: "Research Proposal Report",
-    description:
-      "Detailed proposal including problem statement, literature review, and methodology.",
-    status: "completed",
-    link: "#", // update when available
-    fileType: "PDF",
-    lastUpdated: new Date("2025-08-31"),
-  },
-
-  {
-    title: "Research Paper (Conference Submission)",
-    description:
-      "SinhalaLearn research paper submitted and accepted; currently awaiting publication payment process.",
-    status: "in-progress",
-    link: "#",
-    fileType: "Draft",
-    lastUpdated: new Date("2026-04-03"),
-  },
-
-  {
-    title: "System Design & Architecture",
-    description:
-      "Detailed architecture including RAG pipeline, OCR processing, and evaluation module design.",
-    status: "in-progress",
-    link: "#",
-    fileType: "Draft",
-  },
-
-  {
-    title: "Final Report",
-    description:
-      "Comprehensive documentation including methodology, implementation, results, and analysis.",
+      "Placeholder (required): Add charter link. Status: Pending/Uploaded. Version: Placeholder.",
     status: "planned",
     link: "#",
     fileType: "Planned",
   },
 
   {
-    title: "Final Presentation Slides",
-    description: "Slides for final system demonstration and evaluation.",
+    title: "Proposal Document",
+    description:
+      "Placeholder (required): Add proposal document link. Status: Pending/Uploaded. Version: Placeholder.",
+    status: "planned",
+    link: "#",
+    fileType: "Planned",
+  },
+
+  {
+    title: "Final Documents and Checklists",
+    description:
+      "Placeholder (required): Add final document/checklist links. Status: Pending/Uploaded. Version: Placeholder.",
     status: "planned",
     link: "#",
     fileType: "Planned",

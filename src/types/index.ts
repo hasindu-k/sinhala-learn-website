@@ -26,6 +26,8 @@ export interface Milestone {
   status: "completed" | "in-progress" | "upcoming";
   title: string;
   description: string;
+  date: string;
+  marks: string;
   weight: number;
 }
 

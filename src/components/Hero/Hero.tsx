@@ -39,17 +39,15 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden">
+    <section id="home" className="relative overflow-hidden">
       {/* background wash */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-sky-50 to-transparent dark:from-slate-900/70 dark:to-transparent transition-colors"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-12">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           {/* Left */}
           <div>
-            <span className="tag">
-              IT4010 Research Project – SLIIT 2025 July
-            </span>
+            <span className="tag">IT4010 Research Project | SLIIT</span>
 
             <h1 className="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
               AI‑Powered Educational Assistant for{" "}
@@ -62,11 +60,33 @@ const Hero: React.FC = () => {
             </h1>
 
             <p className="mt-5 text-slate-600 dark:text-slate-300 leading-relaxed transition-colors">
-              Building <strong>offline‑capable</strong>,{" "}
-              <strong>source‑grounded</strong> Sinhala Q&A, document processing,
-              and <strong>semantic</strong> answer evaluation — tailored for Sri
-              Lankan classrooms.
+              This page follows the planned project website structure and keeps
+              reserved areas for milestones, documents, presentations, team
+              details, and future updates.
             </p>
+
+            <h3 className="mt-6 text-lg font-bold text-slate-900 dark:text-slate-100">
+              Home Page Checklist
+            </h3>
+
+            <ul className="mt-3 grid sm:grid-cols-2 gap-3 text-sm text-slate-700 dark:text-slate-300">
+              <li className="flex items-start gap-2">
+                <span className="mt-1 h-2 w-2 rounded-full bg-sky-500"></span>
+                <span>Short introduction of the project</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1 h-2 w-2 rounded-full bg-indigo-500"></span>
+                <span>Relevant graphics area (optimized images only)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1 h-2 w-2 rounded-full bg-fuchsia-500"></span>
+                <span>Consistent navigation across sections</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1 h-2 w-2 rounded-full bg-emerald-500"></span>
+                <span>Performance-friendly content layout</span>
+              </li>
+            </ul>
 
             <div className="mt-6 flex flex-wrap gap-3">
               <span className="chip bg-slate-900 text-white dark:bg-slate-200 dark:text-slate-900">
@@ -108,16 +128,13 @@ const Hero: React.FC = () => {
 
             <div className="mt-8 flex items-center gap-3">
               <a
-                href="#timeline"
+                href="#milestones"
                 className="btn btn-primary dark:btn-primary-dark"
               >
-                Project Timeline
+                View Milestones
               </a>
-              <a
-                href="#components"
-                className="btn btn-ghost dark:btn-ghost-dark"
-              >
-                View Components
+              <a href="#domain" className="btn btn-ghost dark:btn-ghost-dark">
+                View Domain
               </a>
             </div>
           </div>
@@ -165,12 +182,11 @@ const Hero: React.FC = () => {
 
               <div className="mt-6 rounded-xl ring-soft p-4 dark:ring-soft-dark transition-colors">
                 <p className="text-sm text-slate-600 dark:text-slate-300 transition-colors">
-                  Latest update:{" "}
+                  Placeholder (required):{" "}
                   <span className="font-semibold text-slate-800 dark:text-slate-100 transition-colors">
-                    Proposal Presentation and Progress Evaluation completed
-                    successfully
+                    Add project banner image or short intro video here and keep
+                    total deployment asset size under 20 MB.
                   </span>
-                  . Final evaluation phase is currently pending.
                 </p>
 
                 <div className="mt-3 h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden transition-colors">

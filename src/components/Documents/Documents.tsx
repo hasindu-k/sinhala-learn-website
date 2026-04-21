@@ -106,13 +106,18 @@ const Documents: React.FC = () => {
           </span>
         </div>
 
+        <p className="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">
+          Keep links to all required files and leave clear placeholders for
+          pending uploads.
+        </p>
+
         <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {documents.map((doc, index) => {
+          {documents.map((doc) => {
             const size = doc.link && doc.link !== "#" ? sizes[doc.link] : null;
 
             return (
               <div
-                key={index}
+                key={doc.title}
                 className={`group rounded-2xl p-6 border border-slate-200/70 dark:border-slate-700 ${
                   doc.status === "completed"
                     ? "bg-slate-50 dark:bg-slate-800"
@@ -141,6 +146,11 @@ const Documents: React.FC = () => {
                 <p className="text-sm text-slate-600 dark:text-slate-300 mb-4 transition-colors">
                   {doc.description}
                 </p>
+                {doc.link === "#" && (
+                  <p className="text-xs text-amber-700 dark:text-amber-300 mb-4">
+                    Placeholder (required): Add final document URL.
+                  </p>
+                )}
 
                 {/* Additional document info */}
                 <div className="text-xs text-slate-500 dark:text-slate-400 space-y-1 mb-4 transition-colors">
@@ -172,9 +182,9 @@ const Documents: React.FC = () => {
                       : "text-slate-400 dark:text-slate-500 cursor-not-allowed"
                   }`}
                   onClick={
-                    doc.status !== "completed"
-                      ? (e) => e.preventDefault()
-                      : undefined
+                    doc.status === "completed"
+                      ? undefined
+                      : (e) => e.preventDefault()
                   }
                 >
                   {getStatusText(doc)}
