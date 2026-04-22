@@ -112,21 +112,12 @@ export const milestones: Milestone[] = [
   },
   {
     status: "upcoming",
-    title: "Final Assessment",
+    title: "Final Assessment & Viva",
     description:
-      "Final assessment slot reserved for full system demonstration and rubric-based grading.",
-    date: "Placeholder (required): Add official final assessment date",
+      "Final system demonstration and oral defense including panel Q&A and individual contribution validation.",
+    date: "May 6, 2026",
     marks: "Pending",
-    weight: 20,
-  },
-  {
-    status: "upcoming",
-    title: "Viva",
-    description:
-      "Final oral defense milestone reserved for panel Q&A and individual contribution validation.",
-    date: "Placeholder (required): Add official viva date",
-    marks: "Pending",
-    weight: 20,
+    weight: 40,
   },
 ];
 
