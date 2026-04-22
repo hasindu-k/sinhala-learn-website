@@ -79,8 +79,7 @@ const Contact: React.FC = () => {
       setTimeout(() => {
         setSuccess("");
       }, 3000);
-    } catch (error) {
-      console.error("EmailJS error:", error);
+    } catch {
       setErrorMsg("Failed to send message ❌");
       setSuccess("");
 
