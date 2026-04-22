@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex justify-center">
           <p className="text-sm text-slate-500 dark:text-slate-400 text-center transition-colors">
-            © 2025 SinhalaLearn Research Team — SLIIT
+            © 2025 SinhalaLearn Research Team - SLIIT
           </p>
         </div>
       </div>
