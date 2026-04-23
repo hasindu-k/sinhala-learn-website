@@ -1,43 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { motion } from "framer-motion";
 import "./Hero.css";
 
 const Hero: React.FC = () => {
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    const calculateProgress = () => {
-      const stages = [
-        { name: "Proposal", status: "completed", weight: 0.3 },
-        { name: "Progress", status: "completed", weight: 0.4 },
-        { name: "Final", status: "upcoming", weight: 0.3 },
-      ];
-
-      const total = stages.reduce((sum, s) => sum + s.weight, 0);
-
-      const achieved = stages.reduce((sum, s) => {
-        if (s.status === "completed") return sum + s.weight;
-        if (s.status === "in-progress") return sum + s.weight * 0.5;
-        return sum;
-      }, 0);
-
-      return Math.round((achieved / total) * 100);
-    };
-
-    const target = calculateProgress();
-
-    const interval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= target) {
-          clearInterval(interval);
-          return target;
-        }
-        return prev + 1;
-      });
-    }, 30);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section id="home" className="relative overflow-hidden">
       {/* background wash */}
@@ -139,76 +104,62 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Right card */}
-          <div className="relative">
-            <div className="rounded-2xl border border-slate-200/60 dark:border-slate-700 bg-white dark:bg-slate-900/60 shadow-soft p-6 backdrop-blur transition-colors">
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 text-center">
-                <div className="rounded-xl p-5 bg-sky-50 dark:bg-sky-900/30 transition-colors status-card">
-                  <div className="text-3xl font-extrabold text-sky-600 dark:text-sky-300">
-                    01
-                  </div>
-                  <div className="text-xs uppercase tracking-wide mt-1 text-slate-600 dark:text-slate-300">
-                    Proposal
-                  </div>
-                  <div className="mt-2 text-xs font-semibold text-emerald-600 dark:text-emerald-300">
-                    Completed
-                  </div>
-                </div>
-
-                <div className="rounded-xl p-5 bg-indigo-50 dark:bg-indigo-900/30 transition-colors status-card">
-                  <div className="text-3xl font-extrabold text-indigo-600 dark:text-indigo-300">
-                    02
-                  </div>
-                  <div className="text-xs uppercase tracking-wide mt-1 text-slate-600 dark:text-slate-300">
-                    Progress Evaluation
-                  </div>
-                  <div className="mt-2 text-xs font-semibold text-amber-600 dark:text-amber-300">
-                    Completed
+          {/* Right Section Container */}
+          <div className="relative flex flex-col gap-8">
+            {/* Phone Mockup Placeholder */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="relative hidden lg:block"
+            >
+              <div className="relative mx-auto w-[280px] h-[560px]">
+                {/* Main Phone */}
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900 rounded-[3rem] shadow-2xl border-8 border-gray-700 overflow-hidden">
+                  {/* Screen Content - Learning Mode UI */}
+                  <div className="bg-white h-full overflow-hidden">
+                    <img
+                      src="/sinhala-learn-website/learning-mode-ui.jpg"
+                      alt="SinhalaLearn Learning Mode Interface"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
 
-                <div className="rounded-xl p-5 bg-fuchsia-50 dark:bg-fuchsia-900/30 transition-colors status-card">
-                  <div className="text-3xl font-extrabold text-fuchsia-600 dark:text-fuchsia-300">
-                    03
+                {/* Floating Feature Cards */}
+                <motion.div
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 3, repeat: Infinity }}
+                  className="absolute -left-12 top-20 bg-white/90 dark:bg-slate-800/90 backdrop-blur text-slate-800 dark:text-white rounded-2xl shadow-xl p-4 w-48 border border-white/20"
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-8 h-8 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+                      ✓
+                    </div>
+                    <span className="font-semibold text-sm">95% Accuracy</span>
                   </div>
-                  <div className="text-xs uppercase tracking-wide mt-1 text-slate-600 dark:text-slate-300">
-                    Final Evaluation
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                    Voice recognition
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
+                  className="absolute -right-12 bottom-32 bg-white/90 dark:bg-slate-800/90 backdrop-blur text-slate-800 dark:text-white rounded-2xl shadow-xl p-4 w-48 border border-white/20"
+                >
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="w-8 h-8 bg-sky-100 dark:bg-sky-900/30 rounded-lg flex items-center justify-center text-sky-600 dark:text-sky-400">
+                      📚
+                    </div>
+                    <span className="font-semibold text-sm">Offline Mode</span>
                   </div>
-                  <div className="mt-2 text-xs font-semibold text-slate-500 dark:text-slate-400">
-                    Upcoming
-                  </div>
-                </div>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                    Learn anywhere
+                  </p>
+                </motion.div>
               </div>
-
-              <div className="mt-6 rounded-xl ring-soft p-4 dark:ring-soft-dark transition-colors">
-                <p className="text-sm text-slate-600 dark:text-slate-300 transition-colors">
-                  Placeholder (required):{" "}
-                  <span className="font-semibold text-slate-800 dark:text-slate-100 transition-colors">
-                    Add project banner image or short intro video here and keep
-                    total deployment asset size under 20 MB.
-                  </span>
-                </p>
-
-                <div className="mt-3 h-2 w-full bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden transition-colors">
-                  <div
-                    className="h-full bg-gradient-to-r from-sky-500 via-indigo-500 to-fuchsia-500"
-                    style={{ width: `${progress}%` }}
-                  />
-                </div>
-
-                <p className="mt-2 text-xs text-slate-500 dark:text-slate-400 transition-all duration-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:scale-105 relative group">
-                  Estimated overall progress: ~{progress}%
-                  <span className="absolute left-1/2 -translate-x-1/2 mt-6 w-max px-2 py-1 text-xs rounded-md bg-slate-800 text-white dark:bg-slate-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    Calculated from completed and in-progress milestones
-                  </span>
-                </p>
-
-                <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
-                  Milestones reflect the structured evaluation process of the
-                  IT4010 Research Project.
-                </p>
-              </div>
-            </div>
+            </motion.div>
           </div>
           {/* end right */}
         </div>

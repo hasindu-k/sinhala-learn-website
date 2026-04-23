@@ -25,7 +25,7 @@ const Header: React.FC = () => {
           }
         });
       },
-      { threshold: 0.6 },
+      { threshold: 0.6 }
     );
 
     const elements: HTMLElement[] = [];
@@ -48,9 +48,14 @@ const Header: React.FC = () => {
     <header className="sticky top-0 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur border-b border-slate-200/60 dark:border-slate-700/60 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="h-16 flex items-center justify-between">
-          {/* Logo */}
+
+          {/* Logo (Home click → NO #home) */}
           <a
             href="#home"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
             className="flex items-center gap-3"
             aria-label="Go to home"
           >
@@ -61,21 +66,40 @@ const Header: React.FC = () => {
           </a>
 
           <div className="flex items-center gap-4">
+
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center gap-6 text-sm">
-              {sections.map((section) => (
-                <a
-                  key={section.id}
-                  href={`#${section.id}`}
-                  className={`relative pb-1 transition text-slate-700 dark:text-slate-300 ${
-                    activeSection === section.id
-                      ? "active-link"
-                      : "hover:text-sky-600 dark:hover:text-sky-400"
-                  }`}
-                >
-                  {section.label}
-                </a>
-              ))}
+              {sections.map((section) =>
+                section.id === "home" ? (
+                  <a
+                    key={section.id}
+                    href="#home"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                    className={`relative pb-1 transition text-slate-700 dark:text-slate-300 ${
+                      activeSection === section.id
+                        ? "active-link"
+                        : "hover:text-sky-600 dark:hover:text-sky-400"
+                    }`}
+                  >
+                    {section.label}
+                  </a>
+                ) : (
+                  <a
+                    key={section.id}
+                    href={`#${section.id}`}
+                    className={`relative pb-1 transition text-slate-700 dark:text-slate-300 ${
+                      activeSection === section.id
+                        ? "active-link"
+                        : "hover:text-sky-600 dark:hover:text-sky-400"
+                    }`}
+                  >
+                    {section.label}
+                  </a>
+                )
+              )}
             </nav>
 
             {/* Theme Toggle */}
@@ -98,7 +122,14 @@ const Header: React.FC = () => {
               <a
                 key={section.id}
                 href={`#${section.id}`}
-                onClick={() => setMenuOpen(false)}
+                onClick={(e) => {
+                  setMenuOpen(false);
+
+                  if (section.id === "home") {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }
+                }}
                 className={`relative pb-1 text-slate-700 dark:text-slate-300 ${
                   activeSection === section.id
                     ? "active-link"
