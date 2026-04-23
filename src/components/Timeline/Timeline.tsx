@@ -33,10 +33,7 @@ const Timeline: React.FC = () => {
         <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 transition-colors">
           Milestones
         </h2>
-        <p className="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">
-          Assessments are shown with date, marks, and status. Use placeholders
-          until official marks are released.
-        </p>
+
         <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {milestones.map((milestone) => (
             <div
