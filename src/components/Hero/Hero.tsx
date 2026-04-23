@@ -119,7 +119,7 @@ const Hero: React.FC = () => {
                   {/* Screen Content - Learning Mode UI */}
                   <div className="bg-white h-full overflow-hidden">
                     <img
-                      src="/sinhala-learn-website/learning-mode-ui.jpg"
+                      src="learning-mode-ui.jpg"
                       alt="SinhalaLearn Learning Mode Interface"
                       className="w-full h-full object-cover"
                     />
