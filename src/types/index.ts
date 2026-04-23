@@ -35,8 +35,9 @@ export interface Document {
   title: string;
   description: string;
   status: "completed" | "in-progress" | "planned";
-  link: string;
+  link?: string;
   fileType: string;
   lastUpdated?: Date;
   size?: string | null;
+  subDocuments?: { title: string; link: string; status: string }[];
 }

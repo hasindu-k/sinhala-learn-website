@@ -6,9 +6,10 @@ import { useFileSizes } from "../../hooks/useFileSizes";
 
 const Documents: React.FC = () => {
   const docUrls = React.useMemo(
-    () => documents.map((d) => d.link),
-    [documents],
+    () => documents.map((d) => d.link).filter(Boolean),
+    [],
   );
+
   const sizes = useFileSizes(docUrls);
 
   const statusColors = {
@@ -26,17 +27,6 @@ const Documents: React.FC = () => {
     },
   };
 
-  // Get the most recent update date from all documents
-  const getLastUpdatedText = () => {
-    const dates = documents
-      .filter((doc) => doc.lastUpdated)
-      .map((doc) => doc.lastUpdated!.getTime());
-    if (dates.length === 0) return "No updates yet";
-    const latestDate = new Date(Math.max(...dates));
-    return `Last updated: ${formatDate(latestDate)}`;
-  };
-
-  // Format date to readable string
   const formatDate = (date: Date): string => {
     return date.toLocaleDateString("en-US", {
       year: "numeric",
@@ -45,7 +35,6 @@ const Documents: React.FC = () => {
     });
   };
 
-  // Format relative time (e.g., "2 days ago")
   const formatRelativeTime = (date: Date): string => {
     const now = new Date();
     const diffTime = Math.abs(now.getTime() - date.getTime());
@@ -59,26 +48,32 @@ const Documents: React.FC = () => {
     return formatDate(date);
   };
 
-  // Get status text based on document status
+  const getLastUpdatedText = () => {
+    const dates = documents
+      .filter((doc) => doc.lastUpdated)
+      .map((doc) => doc.lastUpdated!.getTime());
+
+    if (dates.length === 0) return "No updates yet";
+
+    const latestDate = new Date(Math.max(...dates));
+    return `Last updated: ${formatDate(latestDate)}`;
+  };
+
   const getStatusText = (doc: Document): string => {
     switch (doc.status) {
       case "completed":
         return "Open document →";
-
       case "in-progress":
         return doc.lastUpdated
           ? `Updated ${formatRelativeTime(doc.lastUpdated)}`
           : "In progress";
-
       case "planned":
         return "Scheduled for development";
-
       default:
         return "";
     }
   };
 
-  // Get icon based on file type
   const getFileIcon = (fileType: string): string => {
     const iconMap: Record<string, string> = {
       PDF: "📄",
@@ -89,6 +84,23 @@ const Documents: React.FC = () => {
       Presentation: "📊",
     };
     return iconMap[fileType] || "📄";
+  };
+
+  const getCardSpanClass = (doc: Document) => {
+    const subDocCount = doc.subDocuments?.length || 0;
+    const hasLongDescription = doc.description.length > 140;
+
+    // multiple docs / richer cards -> taller
+    if (subDocCount >= 3) {
+      return "md:row-span-2 lg:col-span-2 lg:row-span-2";
+    }
+
+    if (subDocCount >= 1 || hasLongDescription) {
+      return "md:row-span-2";
+    }
+
+    // single simple docs
+    return "row-span-1";
   };
 
   return (
@@ -106,92 +118,112 @@ const Documents: React.FC = () => {
           </span>
         </div>
 
-        <p className="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">
-          Keep links to all required files and leave clear placeholders for
-          pending uploads.
-        </p>
-
-        <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 grid-flow-row-dense">
           {documents.map((doc) => {
             const size = doc.link && doc.link !== "#" ? sizes[doc.link] : null;
+            const isCompleted = doc.status === "completed";
+            const cardSpanClass = getCardSpanClass(doc);
 
             return (
               <div
                 key={doc.title}
-                className={`group rounded-2xl p-6 border border-slate-200/70 dark:border-slate-700 ${
-                  doc.status === "completed"
+                className={`group ${cardSpanClass} rounded-2xl border border-slate-200/70 dark:border-slate-700 transition-all duration-300 hover:shadow-md hover:border-slate-300 dark:hover:border-slate-600 overflow-hidden ${
+                  isCompleted
                     ? "bg-slate-50 dark:bg-slate-800"
                     : "bg-white dark:bg-slate-800/70"
-                } transition-colors duration-300 hover:shadow-md hover:border-slate-300 dark:hover:border-slate-600`}
+                }`}
               >
-                <div className="flex items-start justify-between mb-3">
-                  <div className="text-2xl mr-3 select-none">
-                    {" "}
-                    {getFileIcon(doc.fileType)}{" "}
+                <div className="flex h-full flex-col p-6">
+                  <div className="flex items-start justify-between mb-3">
+                    <div className="text-2xl mr-3 select-none">
+                      {getFileIcon(doc.fileType)}
+                    </div>
+
+                    <span
+                      className={`text-xs px-2 py-1 rounded-full whitespace-nowrap transition-colors ${
+                        statusColors[doc.status].bg
+                      } ${statusColors[doc.status].text}`}
+                    >
+                      {doc.fileType}
+                    </span>
                   </div>
-                  <span
-                    className={`text-xs px-2 py-1 rounded-full ${
-                      statusColors[doc.status].bg
-                    } ${
-                      statusColors[doc.status].text
-                    } whitespace-nowrap transition-colors`}
-                  >
-                    {doc.fileType}
-                  </span>
-                </div>
 
-                <h3 className="font-bold text-lg mb-2 text-slate-900 dark:text-slate-100 transition-colors">
-                  {doc.title}
-                </h3>
-                <p className="text-sm text-slate-600 dark:text-slate-300 mb-4 transition-colors">
-                  {doc.description}
-                </p>
-                {doc.link === "#" && (
-                  <p className="text-xs text-amber-700 dark:text-amber-300 mb-4">
-                    Placeholder (required): Add final document URL.
+                  <h3 className="font-bold text-lg mb-2 text-slate-900 dark:text-slate-100 transition-colors">
+                    {doc.title}
+                  </h3>
+
+                  <p className="text-sm text-slate-600 dark:text-slate-300 mb-4 transition-colors">
+                    {doc.description}
                   </p>
-                )}
 
-                {/* Additional document info */}
-                <div className="text-xs text-slate-500 dark:text-slate-400 space-y-1 mb-4 transition-colors">
-                  {size && (
-                    <div className="flex justify-between">
-                      <span>Size:</span>
-                      <span className="font-medium text-slate-700 dark:text-slate-200 transition-colors">
-                        {size}
-                      </span>
+                  <div className="text-xs text-slate-500 dark:text-slate-400 space-y-1 mb-4 transition-colors">
+                    {size && (
+                      <div className="flex justify-between">
+                        <span>Size:</span>
+                        <span className="font-medium text-slate-700 dark:text-slate-200 transition-colors">
+                          {size}
+                        </span>
+                      </div>
+                    )}
+
+                    {doc.lastUpdated && (
+                      <div className="flex justify-between">
+                        <span>Updated:</span>
+                        <span className="font-medium text-slate-700 dark:text-slate-200 transition-colors">
+                          {formatDate(doc.lastUpdated)}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+
+                  {doc.subDocuments && doc.subDocuments.length > 0 && (
+                    <div className="mt-2 space-y-2 border-t border-slate-100 dark:border-slate-700 pt-4">
+                      <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                        Attached Files:
+                      </p>
+
+                      <div className="space-y-2">
+                        {doc.subDocuments.map((sub, idx) => (
+                          <a
+                            key={idx}
+                            href={sub.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-between p-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-700 hover:border-sky-500 transition-all text-sm group/sub"
+                          >
+                            <span className="text-slate-700 dark:text-slate-300 group-hover/sub:text-sky-600 transition-colors pr-3">
+                              {sub.title}
+                            </span>
+                            <HiExternalLink className="text-slate-400 group-hover/sub:text-sky-600 shrink-0" />
+                          </a>
+                        ))}
+                      </div>
                     </div>
                   )}
-                  {doc.lastUpdated && (
-                    <div className="flex justify-between">
-                      <span>Updated:</span>
-                      <span className="font-medium text-slate-700 dark:text-slate-200 transition-colors">
-                        {formatDate(doc.lastUpdated)}
-                      </span>
-                    </div>
-                  )}
+
+                  <div className="mt-auto pt-4">
+                    {doc.link && (
+                      <a
+                        href={doc.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`inline-flex items-center text-sm font-medium transition-colors ${
+                          isCompleted
+                            ? "text-sky-600 hover:text-sky-700 dark:text-sky-400 dark:hover:text-sky-300"
+                            : "text-slate-400 dark:text-slate-500 cursor-not-allowed"
+                        }`}
+                        onClick={
+                          isCompleted ? undefined : (e) => e.preventDefault()
+                        }
+                      >
+                        {getStatusText(doc)}
+                        {isCompleted && (
+                          <HiExternalLink className="w-4 h-4 ml-1" />
+                        )}
+                      </a>
+                    )}
+                  </div>
                 </div>
-
-                <a
-                  href={doc.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`inline-flex items-center text-sm font-medium transition-colors ${
-                    doc.status === "completed"
-                      ? "text-sky-600 hover:text-sky-700 dark:text-sky-400 dark:hover:text-sky-300"
-                      : "text-slate-400 dark:text-slate-500 cursor-not-allowed"
-                  }`}
-                  onClick={
-                    doc.status === "completed"
-                      ? undefined
-                      : (e) => e.preventDefault()
-                  }
-                >
-                  {getStatusText(doc)}
-                  {doc.status === "completed" && (
-                    <HiExternalLink className="w-4 h-4 ml-1" />
-                  )}
-                </a>
               </div>
             );
           })}

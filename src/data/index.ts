@@ -123,29 +123,90 @@ export const milestones: Milestone[] = [
 
 export const documents: Document[] = [
   {
-    title: "Project Charter",
+    title: "Topic Assessment Form",
     description:
-      "Placeholder (required): Add charter link. Status: Pending/Uploaded. Version: Placeholder.",
-    status: "planned",
-    link: "#",
-    fileType: "Planned",
+      "Topic assessment form for project evaluation and feedback. Status: Uploaded. Version: 3.0.",
+    status: "completed",
+    link: "https://drive.google.com/file/d/1rwJRzc4vgu0eXtJ_lbHY3GVviWEqyt-M/view?usp=drive_link",
+    fileType: "PDF",
+    lastUpdated: new Date("2025-06-23"),
   },
 
   {
-    title: "Proposal Document",
+    title: "Individual Project Proposals",
     description:
-      "Placeholder (required): Add proposal document link. Status: Pending/Uploaded. Version: Placeholder.",
-    status: "planned",
-    link: "#",
-    fileType: "Planned",
+      "Comprehensive research proposals submitted by each team member covering their respective functional areas.",
+    status: "completed",
+    fileType: "PDF",
+    lastUpdated: new Date("2025-09-19"),
+    subDocuments: [
+      {
+        title: "Proposal: Evaluation of Answers (Lokuhewage M.M)",
+        link: "https://drive.google.com/file/d/1Ro0YBu4iTzlEwlIGEETJdXBQnMR0uRDy/view?usp=drive_link",
+        status: "completed",
+      },
+      {
+        title: "Proposal: Sinhala Document Processing (Ranaweera P.H.K)",
+        link: "https://drive.google.com/file/d/12lOz06qVKUM5VRsJAYojlRxBuqWjF_bI/view?usp=drive_link",
+        status: "completed",
+      },
+      {
+        title: "Proposal: Resource‑Based Q&A - Text (Jayananda L.V.O.R)",
+        link: "https://drive.google.com/file/d/18cIblzscCTYRWEnpFyFEdo5gzR1WctpA/view?usp=drive_link",
+        status: "completed",
+      },
+      {
+        title: "Proposal: Resource‑Based Q&A - Voice (Sathsara T.T.D)",
+        link: "https://drive.google.com/file/d/1hMqGEa24OGd42w3lv7TkcfJr2SRNA84B/view?usp=drive_link",
+        status: "completed",
+      },
+    ],
   },
 
   {
-    title: "Final Documents and Checklists",
+    title: "Checklist 1 (25-26J-448)",
+    description: "Official project checklist for Phase 1. Status: Uploaded.",
+    status: "completed",
+    link: "https://drive.google.com/file/d/1Ezh1WPIqQGvVAom1PwB4o6R1yJBuu8bS/view?usp=drive_link",
+    fileType: "PDF",
+    lastUpdated: new Date("2026-01-11"),
+  },
+
+  {
+    title: "Final Reports",
     description:
-      "Placeholder (required): Add final document/checklist links. Status: Pending/Uploaded. Version: Placeholder.",
-    status: "planned",
-    link: "#",
-    fileType: "Planned",
+      "Comprehensive final documentation including the group report and individual research contributions.",
+    status: "in-progress",
+    fileType: "Draft",
+    lastUpdated: new Date("2026-04-20"),
+    subDocuments: [
+      {
+        title: "Group Final Report",
+        link: "#",
+        status: "in-progress",
+      },
+      {
+        title: "Individual Report: Evaluation of Answers (Lokuhewage M.M)",
+        link: "#",
+        status: "in-progress",
+      },
+      {
+        title:
+          "Individual Report: Sinhala Document Processing (Ranaweera P.H.K)",
+        link: "#",
+        status: "in-progress",
+      },
+      {
+        title:
+          "Individual Report: Resource‑Based Q&A - Text (Jayananda L.V.O.R)",
+        link: "#",
+        status: "in-progress",
+      },
+      {
+        title: "Individual Report: Resource‑Based Q&A - Voice (Sathsara T.T.D)",
+        link: "#",
+        status: "in-progress",
+      },
+    ],
   },
 ];
