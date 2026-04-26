@@ -93,12 +93,14 @@ const Hero: React.FC = () => {
               </span>
             </div>
 
-            <div className="mt-8 flex items-center gap-3">
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               <a
-                href="#milestones"
+                href="https://sinhalalearn.online"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-primary dark:btn-primary-dark"
               >
-                View Milestones
+                Try SinhalaLearn Platform
               </a>
               <a href="#domain" className="btn btn-ghost dark:btn-ghost-dark">
                 View Domain

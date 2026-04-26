@@ -4,6 +4,8 @@ Research website for **SinhalaLearn: AI-Powered Assistant for Sinhala Resources*
 
 Live site: [https://research.sinhalalearn.online](https://research.sinhalalearn.online)
 
+Main website preview: [https://sinhalalearn.online](https://sinhalalearn.online)
+
 ## Overview
 
 SinhalaLearn explores an AI-powered learning assistant for Sinhala educational resources. The research focuses on Sinhala document processing, resource-based question answering, voice interaction, and explainable answer evaluation for Sinhala-medium learning contexts.
