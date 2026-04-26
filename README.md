@@ -100,5 +100,4 @@ public/
 
 ## Contact
 
-Email: sinhala.learn@gmail.com
-
+Email: miyurilokuhewage15@gmail.com
