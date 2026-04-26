@@ -11,7 +11,7 @@ const Contact: React.FC = () => {
 
   const contactDetails = {
     phone: "+94 77 441 1969",
-    email: "sinhala.learn@gmail.com",
+    email: "miyurilokuhewage15@gmail.com",
     address: "SLIIT, New Colombo Rd, Malabe, Sri Lanka",
   };
 
@@ -77,17 +77,17 @@ const Contact: React.FC = () => {
         <div className="mt-10 grid lg:grid-cols-5 gap-8 items-start">
           {/* Contact Info Card */}
           <article className="lg:col-span-2 space-y-4">
-            <div className="rounded-2xl p-8 bg-slate-50 dark:bg-slate-800 border border-slate-200/70 dark:border-slate-700">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6">
+            <div className="rounded-2xl p-6 sm:p-8 bg-slate-50 dark:bg-slate-800 border border-slate-200/70 dark:border-slate-700">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6 text-left">
                 Contact Information
               </h3>
 
               <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-sky-100 dark:bg-sky-900/30 text-sky-600 dark:text-sky-400 rounded-xl">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center bg-sky-100 dark:bg-sky-900/30 text-sky-600 dark:text-sky-400 rounded-xl">
                     <HiPhone className="w-6 h-6" />
                   </div>
-                  <div>
+                  <div className="min-w-0 text-left">
                     <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
                       Phone
                     </p>
@@ -97,29 +97,29 @@ const Contact: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-xl">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-xl">
                     <HiMail className="w-6 h-6" />
                   </div>
-                  <div>
+                  <div className="min-w-0 text-left">
                     <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
                       Email
                     </p>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                    <p className="break-words text-sm text-slate-600 dark:text-slate-400">
                       {contactDetails.email}
                     </p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-xl">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400 rounded-xl">
                     <HiLocationMarker className="w-6 h-6" />
                   </div>
-                  <div>
+                  <div className="min-w-0 text-left">
                     <p className="text-sm font-semibold text-slate-900 dark:text-slate-100">
                       Address
                     </p>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">
+                    <p className="break-words text-sm text-slate-600 dark:text-slate-400">
                       {contactDetails.address}
                     </p>
                   </div>

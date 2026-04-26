@@ -183,20 +183,53 @@ const Documents: React.FC = () => {
                       </p>
 
                       <div className="space-y-2">
-                        {doc.subDocuments.map((sub, idx) => (
-                          <a
-                            key={idx}
-                            href={sub.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-between p-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-700 hover:border-sky-500 transition-all text-sm group/sub"
-                          >
-                            <span className="text-slate-700 dark:text-slate-300 group-hover/sub:text-sky-600 transition-colors pr-3">
-                              {sub.title}
-                            </span>
-                            <HiExternalLink className="text-slate-400 group-hover/sub:text-sky-600 shrink-0" />
-                          </a>
-                        ))}
+                        {doc.subDocuments.map((sub, idx) => {
+                          const hasAvailableLink =
+                            sub.status === "completed" &&
+                            Boolean(sub.link) &&
+                            sub.link !== "#";
+
+                          return (
+                            <a
+                              key={idx}
+                              href={hasAvailableLink ? sub.link : undefined}
+                              target={hasAvailableLink ? "_blank" : undefined}
+                              rel={
+                                hasAvailableLink
+                                  ? "noopener noreferrer"
+                                  : undefined
+                              }
+                              aria-disabled={!hasAvailableLink}
+                              onClick={
+                                hasAvailableLink
+                                  ? undefined
+                                  : (e) => e.preventDefault()
+                              }
+                              className={`flex items-center justify-between p-2 rounded-lg border transition-all text-sm group/sub ${
+                                hasAvailableLink
+                                  ? "bg-white dark:bg-slate-900 border-slate-100 dark:border-slate-700 hover:border-sky-500"
+                                  : "bg-slate-50 dark:bg-slate-900/50 border-slate-100 dark:border-slate-800 cursor-not-allowed opacity-70"
+                              }`}
+                            >
+                              <span
+                                className={`pr-3 transition-colors ${
+                                  hasAvailableLink
+                                    ? "text-slate-700 dark:text-slate-300 group-hover/sub:text-sky-600"
+                                    : "text-slate-500 dark:text-slate-500"
+                                }`}
+                              >
+                                {sub.title}
+                              </span>
+                              {hasAvailableLink ? (
+                                <HiExternalLink className="text-slate-400 group-hover/sub:text-sky-600 shrink-0" />
+                              ) : (
+                                <span className="shrink-0 text-[10px] font-semibold uppercase tracking-wider text-amber-600 dark:text-amber-400">
+                                  Pending
+                                </span>
+                              )}
+                            </a>
+                          );
+                        })}
                       </div>
                     </div>
                   )}

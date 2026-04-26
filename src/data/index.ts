@@ -173,6 +173,16 @@ export const documents: Document[] = [
   },
 
   {
+    title: "Camera Ready Research Paper",
+    description:
+      "Final camera-ready research paper submitted for the SinhalaLearn research project.",
+    status: "completed",
+    link: "https://drive.google.com/file/d/1o_fy6-K0ieq46jjym8CFrwSUNMd9_Pce/view?usp=drive_link",
+    fileType: "PDF",
+    lastUpdated: new Date("2026-04-11"),
+  },
+
+  {
     title: "Final Reports",
     description:
       "Comprehensive final documentation including the group report and individual research contributions.",
