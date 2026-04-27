@@ -50,7 +50,9 @@ const Header: React.FC = () => {
         const el = document.getElementById(section.id);
         const rect = el?.getBoundingClientRect();
 
-        return rect ? rect.top <= activationLine && rect.bottom > activationLine : false;
+        return rect
+          ? rect.top <= activationLine && rect.bottom > activationLine
+          : false;
       });
 
       if (visibleSection) {
@@ -124,8 +126,15 @@ const Header: React.FC = () => {
           snippet: `${snippetStart > 0 ? "..." : ""}${snippet}`,
         };
       })
-      .filter((item): item is { id: string; label: string; text: string; snippet: string } =>
-        Boolean(item),
+      .filter(
+        (
+          item,
+        ): item is {
+          id: string;
+          label: string;
+          text: string;
+          snippet: string;
+        } => Boolean(item),
       )
       .slice(0, 6);
   }, [searchIndex, searchQuery]);
@@ -147,7 +156,6 @@ const Header: React.FC = () => {
     <header className="sticky top-0 z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur border-b border-slate-200/60 dark:border-slate-700/60 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="h-16 flex items-center justify-between">
-
           {/* Logo (Home click → NO #home) */}
           <a
             href="#home"
@@ -165,7 +173,6 @@ const Header: React.FC = () => {
           </a>
 
           <div className="flex items-center gap-4">
-
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center gap-6 text-sm">
               {sections.map((section) =>
@@ -197,7 +204,7 @@ const Header: React.FC = () => {
                   >
                     {section.label}
                   </a>
-                )
+                ),
               )}
             </nav>
 
@@ -217,43 +224,52 @@ const Header: React.FC = () => {
               </button>
 
               {searchOpen && (
-                <div className="search-panel absolute right-0 top-12 w-[min(22rem,calc(100vw-2rem))] rounded-2xl border border-slate-200 bg-white p-3 shadow-xl dark:border-slate-700 dark:bg-slate-900">
-                  <label className="relative block">
-                    <HiSearch className="pointer-events-none absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" />
-                    <input
-                      type="search"
-                      autoFocus
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      placeholder="Search the website"
-                      className="w-full rounded-xl border border-slate-200 bg-slate-50 py-2.5 pl-10 pr-3 text-sm text-slate-900 outline-none transition focus:border-sky-500 focus:bg-white focus:ring-2 focus:ring-sky-100 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:focus:border-sky-400 dark:focus:bg-slate-900 dark:focus:ring-sky-900/40"
-                    />
-                  </label>
+                <>
+                  {/* Backdrop */}
+                  <div
+                    className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm md:hidden"
+                    onClick={() => setSearchOpen(false)}
+                  />
 
-                  <div className="mt-3 max-h-72 overflow-y-auto">
-                    {searchQuery.trim() && searchResults.length === 0 && (
-                      <p className="px-2 py-3 text-sm text-slate-500 dark:text-slate-400">
-                        No matching sections found.
-                      </p>
-                    )}
+                  {/* Search Panel */}
+                  <div className="fixed left-1/2 top-16 z-50 w-[calc(100vw-2rem)] max-w-md -translate-x-1/2 rounded-2xl border border-slate-200 bg-white p-3 shadow-xl dark:border-slate-700 dark:bg-slate-900 md:absolute md:right-0 md:left-auto md:top-12 md:w-[22rem] md:translate-x-0">
+                    <label className="relative block">
+                      <HiSearch className="pointer-events-none absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400" />
+                      <input
+                        type="search"
+                        autoFocus
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        placeholder="Search the website"
+                        className="w-full rounded-xl border border-slate-200 bg-slate-50 py-2.5 pl-10 pr-3 text-sm text-slate-900 outline-none transition focus:border-sky-500 focus:bg-white focus:ring-2 focus:ring-sky-100 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:focus:border-sky-400 dark:focus:bg-slate-900 dark:focus:ring-sky-900/40"
+                      />
+                    </label>
 
-                    {searchResults.map((result) => (
-                      <button
-                        key={result.id}
-                        type="button"
-                        onClick={() => scrollToSection(result.id)}
-                        className="w-full rounded-xl px-3 py-2 text-left transition hover:bg-slate-100 dark:hover:bg-slate-800"
-                      >
-                        <span className="block text-sm font-semibold text-slate-900 dark:text-slate-100">
-                          {result.label}
-                        </span>
-                        <span className="mt-1 line-clamp-2 block text-xs leading-relaxed text-slate-500 dark:text-slate-400">
-                          {result.snippet}
-                        </span>
-                      </button>
-                    ))}
+                    <div className="mt-3 max-h-72 overflow-y-auto">
+                      {searchQuery.trim() && searchResults.length === 0 && (
+                        <p className="px-2 py-3 text-sm text-slate-500 dark:text-slate-400">
+                          No matching sections found.
+                        </p>
+                      )}
+
+                      {searchResults.map((result) => (
+                        <button
+                          key={result.id}
+                          type="button"
+                          onClick={() => scrollToSection(result.id)}
+                          className="w-full rounded-xl px-3 py-2 text-left transition hover:bg-slate-100 dark:hover:bg-slate-800"
+                        >
+                          <span className="block text-sm font-semibold text-slate-900 dark:text-slate-100">
+                            {result.label}
+                          </span>
+                          <span className="mt-1 line-clamp-2 block text-xs leading-relaxed text-slate-500 dark:text-slate-400">
+                            {result.snippet}
+                          </span>
+                        </button>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                </>
               )}
             </div>
 
