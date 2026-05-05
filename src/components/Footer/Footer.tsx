@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
               SinhalaLearn Research Team
             </p>
             <p className="mt-1 text-xs text-slate-500 dark:text-slate-400 transition-colors">
-              Copyright 2025 - SLIIT
+              Copyright 2026 - SLIIT
             </p>
           </div>
 
