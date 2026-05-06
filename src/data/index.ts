@@ -171,7 +171,22 @@ export const documents: Document[] = [
     fileType: "PDF",
     lastUpdated: new Date("2026-01-11"),
   },
-
+  {
+    title: "Checklist 2 (25-26J-448)",
+    description: "Official project checklist for Phase 2. Status: Uploaded.",
+    status: "completed",
+    link: "https://youtu.be/y_jHPvt04Qg",
+    fileType: "Link",
+    lastUpdated: new Date("2026-04-30"),
+  },
+  {
+    title: "Checklist 3 (25-26J-448)",
+    description: "Official project checklist for Phase 3. Status: Uploaded.",
+    status: "completed",
+    link: "https://drive.google.com/file/d/1_9JgoNLHjzfCuRFJKWtTbwBOCV2jmI5i/view?usp=drive_link",
+    fileType: "PDF",
+    lastUpdated: new Date("2026-04-30"),
+  },
   {
     title: "Camera Ready Research Paper",
     description:
