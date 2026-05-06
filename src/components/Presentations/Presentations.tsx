@@ -24,8 +24,8 @@ const presentationSlots = [
   {
     title: "Final Presentation",
     description: "Complete system showcase and final project defense.",
-    link: "#",
-    status: "planned",
+    link: "https://www.canva.com/design/DAHDXSmnPa8/h7Qv3RZUzevS18gDoinfDQ/edit",
+    status: "completed",
   },
 ];
 

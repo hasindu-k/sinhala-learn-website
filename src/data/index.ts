@@ -186,36 +186,36 @@ export const documents: Document[] = [
     title: "Final Reports",
     description:
       "Comprehensive final documentation including the group report and individual research contributions.",
-    status: "in-progress",
-    fileType: "Draft",
+    status: "completed",
+    fileType: "PDF",
     lastUpdated: new Date("2026-04-20"),
     subDocuments: [
       {
         title: "Group Final Report",
-        link: "#",
-        status: "in-progress",
+        link: "https://drive.google.com/file/d/1Pq_FZBfSaNeVfFjpdtYGBh5vU0HoeM1Y/view?usp=drive_link",
+        status: "completed",
       },
       {
         title: "Individual Report: Evaluation of Answers (Lokuhewage M.M)",
-        link: "#",
-        status: "in-progress",
+        link: "https://drive.google.com/file/d/1GHNGQgDlqzOX6zMowLkT0qUKpxjbYNbp/view?usp=drive_link",
+        status: "completed",
       },
       {
         title:
           "Individual Report: Sinhala Document Processing (Ranaweera P.H.K)",
-        link: "#",
-        status: "in-progress",
+        link: "https://drive.google.com/file/d/1M-KQzku8XKF4Xmp6NSQ8N3-TIidsJq8H/view?usp=drive_link",
+        status: "completed",
       },
       {
         title:
           "Individual Report: Resource‑Based Q&A - Text (Jayananda L.V.O.R)",
-        link: "#",
-        status: "in-progress",
+        link: "https://drive.google.com/file/d/1k0xdDDvRtpgtKCckrRZBUBIe8cXNyCXt/view?usp=drive_link",
+        status: "completed",
       },
       {
         title: "Individual Report: Resource‑Based Q&A - Voice (Sathsara T.T.D)",
-        link: "#",
-        status: "in-progress",
+        link: "https://drive.google.com/file/d/1vc42gPYgrC4iQrVaLqTFbz81QRSnm7i5/view?usp=drive_link",
+        status: "completed",
       },
     ],
   },

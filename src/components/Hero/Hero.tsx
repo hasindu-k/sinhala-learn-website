@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
             <span className="tag">IT4010 Research Project | SLIIT</span>
 
             <h1 className="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-              SinhalaLearn: AI‑Powered Assistant for{" "}
+              SinhalaLearn: AI‑Powered Education Assistant for{" "}
               <span
                 className="bg-clip-text text-transparent"
                 style={{ backgroundImage: "var(--grad)" }}
